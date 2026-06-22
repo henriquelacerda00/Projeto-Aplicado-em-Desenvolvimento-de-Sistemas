@@ -1,0 +1,55 @@
+<div class="sidebar">
+    <img [routerLink]="['/']" src="assets/logo-sensorial.png" alt="logo cva" />
+    <mat-form-field appearance="fill" class="sidebar-form-field">
+        <mat-label>Search</mat-label>
+        <input type="search" matInput placeholder="">
+        <mat-icon matIconPrefix>search</mat-icon>
+    </mat-form-field>
+    <div class="nav">
+        <mat-accordion>
+            <!-- <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+                <mat-expansion-panel-header>
+                    <mat-panel-title> DashBoard</mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-list>
+                    <mat-list-item routerLink="/physical-assessments">
+                        <img src="assets/bean-icon.png" alt="Bean Icon" class="menu__icon" />
+                        <span>{{'CARDS.PHYSICAL_ASSESSMENT' | translate }}</span>
+                    </mat-list-item>
+                    <mat-list-item routerLink="/size-table">
+                        <img src="assets/size_icon.png" alt="Size Icon" class="menu__icon" />
+                        <span>{{'CARDS.SIZE_TABLE' | translate}}</span>
+                    </mat-list-item>
+                    <mat-list-item routerLink="/descriptive-form">
+                       <img src="assets/descriptive_icon.png" alt="Descriptive Icon" class="menu__icon" />
+                        <span>{{'CARDS.DESCRIPTIVE_FORM' | translate}}</span>
+                    </mat-list-item>
+                    <mat-list-item routerLink="/affective-form">
+                        <img src="assets/affective_icon.png" alt="Affective Icon" class="menu__icon" />
+                        <span>{{'CARDS.AFFECTIVE_FORM' | translate}}</span>
+                    </mat-list-item>
+                    <mat-list-item routerLink="extrisinc-form">
+                        <img src="assets/extrisinc_icon.png" alt="Extrinsic Icon" class="menu__icon" />
+                        <span>{{'CARDS.EXTRISINC_FORM' | translate}}</span>
+                    </mat-list-item>
+                </mat-list>
+            </mat-expansion-panel> -->
+            <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+                <mat-expansion-panel-header>
+                    <mat-panel-title> Sessões</mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-list>
+                    <mat-list-item [routerLink]="['/cadastrar-sessao']" *ngIf="userRole === 'P'">
+                        Cadastrar Sessão
+                    </mat-list-item>
+                    <mat-list-item [routerLink]="['/minha-sessao']" *ngIf="userRole === 'P' || userRole === 'Q'">
+                        Minhas Sessões
+                    </mat-list-item>
+                    <mat-list-item [routerLink]="['/gerenciar-sessoes']" *ngIf="userRole === 'P'">
+                        Gerenciar Sessões
+                    </mat-list-item>
+                </mat-list>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+</div>

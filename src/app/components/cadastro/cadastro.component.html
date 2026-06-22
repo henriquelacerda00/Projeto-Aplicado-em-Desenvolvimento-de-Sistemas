@@ -1,0 +1,80 @@
+<!-- <app-container>
+  <section class="cadastro">
+    <mat-card class="card-cadastro" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title><strong>CADASTRO</strong></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <ng-container *ngIf="!loadingService.loading(); else loading">
+          <img
+            class="cadastro-logo"
+            mat-card-image
+            src="assets/logo-sensorial.png"
+            alt="Photo of a Shiba Inu"
+          />
+          <div class="form-container">
+            <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+              <mat-form-field appearance="outline">
+                <mat-label>Nome</mat-label>
+                <input type="text" name="nome" matInput placeholder="Escreva seu nome completo" formControlName="nome" />
+                <mat-icon matSuffix>account_circle</mat-icon>
+                <mat-error>Campo obrigatório*</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>E-mail</mat-label>
+                <input type="email" name="email" matInput placeholder="Escreva seu e-mail" formControlName="email" />
+                <mat-icon matSuffix>mail</mat-icon>
+                @if (cadastroForm.get('email')?.touched && cadastroForm.get('email')?.invalid){
+                  <mat-error>
+                    @if (cadastroForm.get('email')?.hasError('required')){
+                      Campo obrigatório*
+                    } @else if(cadastroForm.get('email')?.hasError('email')){
+                      E-mail inválido*
+                    }
+                  </mat-error>
+                }
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Senha</mat-label>
+                <input type="password" name="senha" matInput placeholder="Escreva sua senha" formControlName="senha" />
+                <mat-icon matSuffix>password</mat-icon>
+                @if (cadastroForm.get('senha')?.touched && cadastroForm.get('senha')?.invalid){
+                  <mat-error>
+                    @if (cadastroForm.get('senha')?.hasError('required')){
+                      Campo obrigatório*
+                    } @else if(cadastroForm.get('senha')?.hasError('minlength')){
+                      Mínimo de 6 caracteres*
+                    }
+                  </mat-error>
+                }
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Confirmar senha</mat-label>
+                <input type="password" name="confirmarSenha" matInput placeholder="Confirme sua senha" formControlName="confirmarSenha" [errorStateMatcher]="matcher" />
+                <mat-icon matSuffix>password</mat-icon>
+                <mat-error>
+                  @if (cadastroForm.get('confirmarSenha')?.hasError('required')){
+                    Campo obrigatório*
+                  } @else if(cadastroForm.get('confirmarSenha')?.hasError('minlength')){
+                    Mínimo de 6 caracteres*
+                  } @else if(cadastroForm.hasError('senhasDiferentes')){
+                    As senhas não conferem*
+                  }
+                </mat-error>
+              </mat-form-field>
+              <mat-card-actions>
+                <app-login-google label="Cadastre-se com Google"></app-login-google>
+                <button type="submit" [disabled]="cadastroForm.invalid" mat-flat-button>CADASTRAR</button>
+              </mat-card-actions>
+            </form>
+          </div>
+        </ng-container>
+        <ng-template #loading>
+          <div class="loading-wrapper">
+            <app-loading></app-loading>
+          </div>
+        </ng-template>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</app-container> -->

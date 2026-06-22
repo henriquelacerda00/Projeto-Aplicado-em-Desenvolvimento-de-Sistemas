@@ -1,0 +1,14 @@
+:host{
+  display: block;
+  max-width: 1100px;
+  min-width: 950px;
+  margin: 0 auto;
+
+}
+
+@media screen and (max-width: 900px) {
+  :host {
+    max-width: none;
+    padding: 0 5vw;
+  }
+}

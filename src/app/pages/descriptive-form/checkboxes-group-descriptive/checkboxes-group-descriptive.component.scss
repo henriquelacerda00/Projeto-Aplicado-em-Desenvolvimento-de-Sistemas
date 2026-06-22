@@ -1,0 +1,40 @@
+@use "@angular/material" as mat;
+
+:host {
+  @include mat.checkbox-overrides(
+    (
+      label-text-size: 12px,
+    )
+  );
+}
+
+.checkboxes-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1em;
+  margin: 1em 0;
+  gap: 3.5em;
+
+  .checkboxes-colum {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    .checkboxes-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px; // Adiciona um espaçamento entre os checkboxes
+
+      .mat-checkbox-label {
+        text-align: center;
+        font-size: 10px;
+      }
+
+      .mat-checkbox-inner-container {
+        transform: scale(0.4);
+      }
+    }
+  }
+}

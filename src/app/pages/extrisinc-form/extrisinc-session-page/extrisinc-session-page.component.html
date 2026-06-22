@@ -1,0 +1,14 @@
+<app-container>
+  <mat-card appearance="outlined">
+    <mat-card-content>
+      <app-extrisinc-form *ngIf="currentSampleNumber" [cadastrarAnalise]="false" [sampleNumber]="currentSampleNumber"
+        [initialData]="currentExtrisincData" [isLastSample]="isLastSample" (submitForm)="onSubmitAll()"
+        (formChange)="onExtrisincChange($event)">
+      </app-extrisinc-form>
+
+      <mat-paginator *ngIf="samples.length > 0" [length]="samples.length" [pageSize]="1" [pageSizeOptions]="[1]"
+        [pageIndex]="currentPageIndex" (page)="onSamplePageChange($event)">
+      </mat-paginator>
+    </mat-card-content>
+  </mat-card>
+</app-container>

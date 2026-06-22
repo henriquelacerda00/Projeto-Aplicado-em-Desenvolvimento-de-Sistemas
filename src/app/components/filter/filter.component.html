@@ -1,0 +1,35 @@
+<div class="filter__container" (dateFilter)="(statusChange)">
+  <form class="filter__form">
+    <mat-form-field appearance="fill" class="">
+      <mat-label>Sample Number:</mat-label>
+      <input matInput placeholder="Enter sample number" name="sampleNumber" [formControl]="sampleNumber" />
+      <span matSuffix class="fa-solid fa-vial custom"></span>
+    </mat-form-field>
+
+    <div class="form__datePicker">
+      <mat-form-field class="input-container">
+        <mat-label>Data</mat-label>
+        <mat-date-range-input matInput [rangePicker]="picker">
+          <input matStartDate placeholder="Início" [(ngModel)]="dataInicio" name="dataInicio" />
+          <input matEndDate placeholder="Fim" [(ngModel)]="dataFim" name="dataFim" />
+        </mat-date-range-input>
+        <mat-hint>Dia/Mês/Ano</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field class="form__tableType">
+      <mat-label>Tipo de Formulário</mat-label>
+      <mat-select [formControl]="selectedTableType" multiple>
+        @for (type of tableTypes; track type) {
+        <mat-option [value]="type">{{ type }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <div class="form__button">
+      <button mat-raised-button color="primary" (click)="filter()">Filtrar</button>
+    </div>
+  </form>
+</div>

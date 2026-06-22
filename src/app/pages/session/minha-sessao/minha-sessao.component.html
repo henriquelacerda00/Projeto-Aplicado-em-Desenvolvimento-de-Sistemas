@@ -1,0 +1,76 @@
+<app-container>
+    <mat-card class="card" appearance="outlined">
+        <mat-card-header>
+            <mat-card-title><strong>Minhas Sessões</strong></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="accordion-container" *ngIf="!loading.isLoading(); else loadingSpinner">
+                <mat-accordion>
+                    <mat-expansion-panel *ngFor="let session of pagedSessions">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                {{ session.name }}
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                {{ session.session_samples.length }} amostras
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+
+                        <div class="cards-container">
+
+                            <div class="form-card-wrapper">
+                                <h3>{{ 'CARDS.PHYSICAL_ASSESSMENT' | translate }}</h3>
+                                <app-cards typeCard="physical" [routerLink]="session.formsStatus?.physical ? null : ['/physical-assessments', session.id]"
+                                    [disabled]="session.formsStatus?.physical"
+                                    [verified]="session.formsStatus?.physical">
+                                </app-cards>
+                            </div>
+
+                            <div class="form-card-wrapper">
+                                <h3>{{ 'CARDS.SIZE_TABLE' | translate }}</h3>
+                                <app-cards typeCard="size" [routerLink]="session.formsStatus?.size ? null : ['/size-table', session.id]"
+                                    [disabled]="session.formsStatus?.size" [verified]="session.formsStatus?.size">
+                                </app-cards>
+                            </div>
+
+                            <div class="form-card-wrapper">
+                                <h3>{{ 'CARDS.DESCRIPTIVE_FORM' | translate }}</h3>
+                                <app-cards typeCard="descriptive" [routerLink]="session.formsStatus?.descriptive ? null : ['/descriptive-form', session.id]"
+                                    [disabled]="session.formsStatus?.descriptive"
+                                    [verified]="session.formsStatus?.descriptive">
+                                </app-cards>
+                            </div>
+
+                            <div class="form-card-wrapper">
+                                <h3>{{ 'CARDS.AFFECTIVE_FORM' | translate }}</h3>
+                                <app-cards typeCard="affective" [routerLink]="session.formsStatus?.affective ? null : ['/affective-form', session.id]"
+                                    [disabled]="session.formsStatus?.affective"
+                                    [verified]="session.formsStatus?.affective">
+                                </app-cards>
+                            </div>
+
+                            <div class="form-card-wrapper">
+                                <h3>{{ 'CARDS.EXTRISINC_FORM' | translate }}</h3>
+                                <app-cards typeCard="extrinsic" [routerLink]="['/extrisinc-form', session.id]">
+                                </app-cards>
+                            </div>
+
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+                <mat-paginator [length]="sessions.length" [pageSize]="pageSize" [pageSizeOptions]="[3,5,10]"
+                    showFirstLastButtons (page)="onSessionPageChange($event)">
+                </mat-paginator>
+            </div>
+            <ng-template #loadingSpinner>
+                <div class="loading-container">
+                    <mat-spinner></mat-spinner>
+                </div>
+            </ng-template>
+        </mat-card-content>
+        <!-- <mat-card-actions>
+            <button matButton>LIKE</button>
+            <button matButton>SHARE</button>
+        </mat-card-actions> -->
+    </mat-card>
+</app-container>

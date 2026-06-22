@@ -1,0 +1,202 @@
+{
+  "TOOL_BAR": {
+    "MY_ANALYSES": "My Analyses",
+    "ABOULT": "About"
+  },
+  "CARDS": {
+    "PHYSICAL_ASSESSMENT": "Physical Assessment",
+    "SIZE_TABLE": "Size Table",
+    "DESCRIPTIVE_FORM": "Descriptive Form",
+    "AFFECTIVE_FORM": "Affective Form",
+    "EXTRISINC_FORM": "Extrisinc Form"
+  },
+  "WELCOME": {
+    "TITLE": "Welcome to CVA DATA",
+    "ADAPTED": "Adapted from:",
+    "PARAGRAPH": "Alpha V1 - September 2023 Thank you for testing Alpha V1 of the Physical Assessment, one of four assessments to be completed under the SCA's Coffee Value Assessment System. The SCA anticipates conducting user research on this assessment in 2024. To learn more, please visit"
+  },
+  "FORMS_HEADER": {
+    "SAMPLE_NUMBER": "Sample Number",
+    "NAME": "Name",
+    "DATE": "Date",
+    "PURPOSE": "Purpose"
+  },
+  "COLORS": {
+    "TITULO": "Colors",
+    "BLUE__GREEN": "Blue Green",
+    "BLUISH__GREEN": "Bluish-Green",
+    "GREEN": "Green",
+    "GREENISH": "Greenish",
+    "YELLOW__GREEN": "Yellow-Green",
+    "PABLE__YELLOW": "Pable Yellow",
+    "YELLOWISH": "Yellowish",
+    "BROWNISH": "Brownish"
+  },
+  "SEND_DATA": "Send Data",
+  "PHYSICAL_ASSESSMENT": {
+    "TITLE": "Physical Assessments",
+    "FULL_BLACK": "Full Black",
+    "FULL_SOUR": "Full Sour",
+    "DRIED_CHERRY": "Dried Cherry",
+    "FUNGUS_DAMAGE": "Fungus Damage",
+    "FOREIGN_MATTER": "Foreign Matter",
+    "SEVERE_INSECT_DAMAGE": "Severe Insect Damage",
+    "PARTIAL_BLACK": "Partial Black",
+    "PARTIAL_SOUR": "Partial Sour",
+    "PARCHMENT": "Parchment",
+    "FLOATER": "Floater",
+    "IMMATURE_UNRIPE": "Immature/unripe",
+    "WITHERED": "Withered",
+    "SHELL": "Shell",
+    "BROKEN_CHIPPED_CUT": "Broken / Chipped / Cut",
+    "HULL_HUSK": "Hull / Husk",
+    "SLIGHT_INSECT_DAMAGE": "Slight Insect Damage",
+    "RADIO": "Radio",
+    "DEFECT_COUNT": "Defect Count",
+    "FULL_DEFECTS": "Full Defects",
+    "TOTAL_GREEN_DEFECTS": "Total Green Defects",
+    "TGD_300G": "TGD in 300g",
+    "MOISTURE": "Moisture",
+    "COB_TYPE": "Cob Type"
+  },
+  "SIZE_TABLE": {
+    "WHEIGHT": "Wheight",
+    "P_TAG": "Weight without deffects",
+    "SIZE": "Size"
+  },
+  "DESCRIPTIVE_FORM": {
+    "FRAGRANCE": "Fragrance",
+    "AROMA": "Aroma",
+    "FLAVOR": "Flavor",
+    "AFTERTASTE": "Aftertaste",
+    "ACIDITY": "Acidity",
+    "SWEETNESS": "Sweetness",
+    "MOUTHFEEL": "Mouthfeel",
+    "OVERALL": "Overall",
+    "NOTES": "Notes",
+    "FLORAL": "Floral",
+    "FRUITY": "Fruity",
+    "BERRY": "Berry",
+    "DRIED_FRUIT": "Dried Fruit",
+    "CITRUS_FRUIT": "Citrus Fruit",
+    "SOUR_FERMENTED": "Sour/Fermented",
+    "SOUR": "Sour",
+    "FERMENTED": "Fermented",
+    "GREEN_VEGETATIVE": "Green/Vegetative",
+    "OTHER": "Other",
+    "CHEMICAL": "Chemical",
+    "MUSTY_EARTHY": "Musty/Earthy",
+    "WOODY": "Woody",
+    "ROASTED": "Roasted",
+    "CEREAL": "Cereal",
+    "BURNT": "Burnt",
+    "TOBACCO": "Tobacco",
+    "NUTTY_COCOA": "Nutty/Cocoa",
+    "NUTTY": "Nutty",
+    "COCOA": "Cocoa",
+    "SPICE": "Spice",
+    "SWEET": "Sweet",
+    "VANILLA_VANILLIN": "Vanilla/Vanillin",
+    "BROWN_SUGAR": "Brown Sugar",
+    "SLIDER": {
+      "LOW": "Low",
+      "MEDIUM": "Medium",
+      "HIGH": "High"
+    },
+    "MAIN_TASTES": {
+      "SALTY": "Salty",
+      "BITTER": "Bitter",
+      "SOUR": "Sour",
+      "UMAMI": "Umami",
+      "SWEET": "Sweet"
+    },
+    "MF_CHECK_BOXES": {
+      "ROUGH": "Rough (Gritty, Chalky, Sandy)",
+      "SMOOTH": "Smooth (Velvety, Silky, Syrupy)",
+      "METALLIC": "Metallic",
+      "OILY": "Oily",
+      "MOUTH_DRYING": "Mouth Drying"
+    }
+  },
+  "AFFECTIVE_FORM": {
+    "LEGEND": {
+      "TITLE": "Impression of Quality",
+      "TITLE2": "Impression of Value",
+      "EXTREMELY_LOW": "EXTREMELY LOW",
+      "VERY_LOW": "VERY LOW",
+      "MODERATELY_LOW": "MODERATELY LOW",
+      "SLIGHTLY_LOW": "SLIGHTLY LOW",
+      "NEITHER_HIGH_NOR_LOW": "NEITHER HIGH NOR LOW",
+      "SLIGHTLY_HIGH": "SLIGHTLY HIGH",
+      "MODERATELY_HIGH": "MODERATELY HIGH",
+      "VERY_HIGH": "VERY HIGH",
+      "EXTREMELY_HIGH": "EXTREMELY HIGH"
+    },
+    "DEFECTS": {
+      "NON_UNIFORM_CUPS": "NON-UNIFORM CUPS",
+      "DEFECTIVE_CUPS": "DEFECTIVE CUPS",
+      "DEFECTS_ANY": "DEFECT (IF ANY)",
+      "MOLDY": "MOLDY",
+      "PHENOLIC": "PHENOLIC",
+      "POTATO": "POTATO"
+    }
+  },
+  "EXTRISINC_FORM": {
+    "FARMING": {
+      "GROUP": "FARMING",
+      "TITLE": "FARMING",
+      "COUNTRY": "Country",
+      "REGION": "Region",
+      "NAME_OF_FARM_OR_CO_OP": "Name of Farm or Co-op",
+      "NAME_OF_PRODUCER_S": "Name of Producer(s)",
+      "SPECIES": "Species",
+      "VARIETY_OR_VARIETIES": "Variety or Varieties",
+      "HARVEST_DATE_YEAR": "Harvest Date/Year",
+      "OTHER": "Other"
+    },
+    "PROCESSING": {
+      "GROUP": "PROCESSING",
+      "TITLE": "PROCESSING",
+      "NAME_OF_PROCESSOR_S": "Name of Processor(s)",
+      "WET_MILL_STATION": "Wet Mill / Station",
+      "DRY_MILL": "Dry Mill",
+      "TYPE_OF_PROCESSING": {
+        "TITLE" : "Type of Processing",
+        "FRUIT_DRIED": "Fruit-dried (dry process, natural)",
+        "MUCIMAGE_DRIED": "Mucilage-dried (honey, semi-dry)",
+        "PARCHMENT_DRIED": "Parchment-dried (washed, wet process, semi-washed, demucilaged)",
+        "SEED_DRIED": "Seed Dried",
+        "OTHER": "Other"
+      },
+      "TYPE_OF_FERMENTATION": {
+        "TITLE": "Type of Fermentation",
+        "GROUP": "TYPE_OF_FERMENTATION",
+        "LACTIC": "Lactic",
+        "ANAEROBIC": "Anaerobic",
+        "CARBONIC_MACERATION": "Carbonic maceration",
+        "MULTIPLE_FERMENTATIONS": "Multiple fermentations",
+        "CO_FERTILIZATION": "Co-fermentation"
+      }
+    },
+    "TRADING": {
+      "GROUP": "TRADING",
+      "TITLE": "TRADING",
+      "SIZE_GRADE": "Size Grade",
+      "OTHER_GRADE": "Other Grade",
+      "DRY_MILL": "Dry Mill",
+      "ICO_NUMBER": "ICO Number",
+      "OTHER": "Other"
+    },
+    "CERTIFICATIONS": {
+      "GROUP": "CERTIFICATIONS",
+      "TITLE": "CERTIFICATIONS",
+      "4C": "4C",
+      "FAIR_TRADE": "Fair Trade",
+      "ORGANIC": "Organic",
+      "RAINFOREST_ALLIANCE": "Rainforest Alliance",
+      "GEOGRAPHICAL_INDICATION": "Geographical Indication",
+      "ABIC": "ABIC",
+      "OTHER": "Other"
+    }
+  }
+}

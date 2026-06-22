@@ -1,0 +1,39 @@
+<div class="menu-container">
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/physical-assessments">
+      <mat-icon>
+        <img src="assets/bean-icon.png" alt="Bean Icon" class="menu__icon" />
+      </mat-icon>
+      <span>{{'CARDS.PHYSICAL_ASSESSMENT' | translate }}</span>
+    </button>
+    <button mat-menu-item routerLink="/size-table">
+      <mat-icon>
+        <img src="assets/size_icon.png" alt="Size Icon" class="menu__icon" />
+      </mat-icon>
+      <span>{{'CARDS.SIZE_TABLE' | translate}}</span>
+    </button>
+    <button mat-menu-item routerLink="/descriptive-form">
+      <mat-icon>
+        <img src="assets/descriptive_icon.png" alt="Descriptive Icon" class="menu__icon" />
+      </mat-icon>
+
+      <span>{{'CARDS.DESCRIPTIVE_FORM' | translate}}</span>
+    </button>
+    <button mat-menu-item routerLink="/affective-form">
+      <mat-icon>
+        <img src="assets/affective_icon.png" alt="Affective Icon" class="menu__icon" />
+      </mat-icon>
+      <span>{{'CARDS.AFFECTIVE_FORM' | translate}}</span>
+    </button>
+    <button mat-menu-item routerLink="/extrisinc-form">
+      <mat-icon>
+        <img src="assets/extrisinc_icon.png" alt="Extrinsic Icon" class="menu__icon" />
+      </mat-icon>
+      <span>{{'CARDS.EXTRISINC_FORM' | translate}}</span>
+    </button>
+  </mat-menu>
+  
+</div>

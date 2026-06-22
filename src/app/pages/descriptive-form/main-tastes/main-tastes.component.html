@@ -1,0 +1,13 @@
+<div class="main-tastes">
+  <p *ngIf="selectedCount >= 2" class="warning">
+    Você pode selecionar no máximo 2 sabores.
+  </p>
+
+  <mat-checkbox
+    *ngFor="let taste of tastes"
+    [checked]="isSelected(taste.control)"
+    (change)="toggle(taste.control)"
+  >
+    {{ ('DESCRIPTIVE_FORM.MAIN_TASTES.' + getTranslationKey(taste.label)) | translate }}
+  </mat-checkbox>
+</div>

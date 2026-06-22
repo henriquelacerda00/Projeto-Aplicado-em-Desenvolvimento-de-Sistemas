@@ -1,0 +1,40 @@
+.example-container {
+   height: calc(100vh - 66px);
+  /* ocupa a tela inteira */
+  overflow-x: hidden;
+  background: white;
+
+  .example-container mat-drawer {
+    height: 100%;
+    /* sidebar acompanha o container */
+    overflow: hidden;
+    background: white;
+  }
+
+  .drawer {
+    width: auto !important;
+    overflow: hidden !important;
+    border-radius: 5px;
+    background: white;
+  }
+
+  .example-container mat-drawer-content {
+    height: 100%;
+    /* conteúdo acompanha */
+    overflow-y: auto;
+    /* scroll fica aqui */
+  }
+
+  /* Remove o padding e o width extra do container interno */
+  mat-drawer .mat-drawer-inner-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  mat-drawer-container {
+    overflow-x: hidden !important;
+    background-color: white;
+  }
+}

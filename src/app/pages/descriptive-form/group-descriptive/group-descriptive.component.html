@@ -1,0 +1,54 @@
+<section class="group-descriptive" [formGroup]="parentForm">
+  <ng-container *ngIf="ShowHiddens">
+    <h2>{{ titulo2 }}</h2>
+    <div class="medidor">
+      <ul>
+        <li>{{'DESCRIPTIVE_FORM.SLIDER.LOW' | translate }}</li>
+        <li>{{'DESCRIPTIVE_FORM.SLIDER.MEDIUM' | translate }}</li>
+        <li>{{'DESCRIPTIVE_FORM.SLIDER.HIGH' | translate}}</li>
+      </ul>
+    </div>
+    <mat-slider min="0" max="15" step="0.1">
+      <input matSliderThumb formControlName="slider_value_hidden">
+    </mat-slider>
+    <div class="slider-labels-container">
+      <div class="slider-label-group"><span class="material-icons arrow">arrow_drop_down</span><span class="label">0</span></div>
+      <div class="slider-label-group"><span class="material-icons arrow">arrow_drop_down</span><span class="label">5</span></div>
+      <div class="slider-label-group"><span class="material-icons arrow">arrow_drop_down</span><span class="label">10</span></div>
+      <div class="slider-label-group"><span class="material-icons arrow">arrow_drop_down</span><span class="label">15</span></div>
+    </div>
+  </ng-container>
+
+  <h2>{{ titulo }}</h2>
+  <div class="medidor">
+    <ul>
+      <li>{{'DESCRIPTIVE_FORM.SLIDER.LOW' | translate }}</li>
+        <li>{{'DESCRIPTIVE_FORM.SLIDER.MEDIUM' | translate }}</li>
+        <li>{{'DESCRIPTIVE_FORM.SLIDER.HIGH' | translate}}</li>
+    </ul>
+  </div>
+  <mat-slider min="0" max="15" step="0.1">
+    <input matSliderThumb formControlName="slider_value">
+  </mat-slider>
+  <div class="slider-labels-container">
+    <div class="slider-label-group"><span class="material-icons arrow">arrow_drop_down</span><span class="label">0</span></div>
+    <div class="slider-label-group"><span class="material-icons arrow">arrow_drop_down</span><span class="label">5</span></div>
+    <div class="slider-label-group"><span class="material-icons arrow">arrow_drop_down</span><span class="label">10</span></div>
+    <div class="slider-label-group"><span class="material-icons arrow">arrow_drop_down</span><span class="label">15</span></div>
+  </div>
+
+  <ng-container *ngIf="!ShowSimple">
+    <app-checkboxes-group-descriptive [parentFormGroup]="parentForm"></app-checkboxes-group-descriptive>
+  </ng-container>
+
+  <ng-container *ngIf="ShowHiddens">
+    <app-main-tastes [parentForm]="parentForm"></app-main-tastes>
+  </ng-container>
+
+  <ng-container *ngIf="parentForm.get('notes')">
+  <mat-form-field class="notes" appearance="outline">
+    <mat-label>{{'DESCRIPTIVE_FORM.NOTES' | translate}}</mat-label>
+    <textarea matInput formControlName="notes"></textarea>
+  </mat-form-field>
+</ng-container>
+</section>

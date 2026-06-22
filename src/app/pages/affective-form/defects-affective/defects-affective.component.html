@@ -1,0 +1,44 @@
+<section [formGroup]="group" class="affective-form">
+  <div class="container">
+    <div class="container-data">
+      <div formArrayName="non_uniform_cups" class="checkboxes-row">
+        <div class="container-title">
+          <p><strong>{{'AFFECTIVE_FORM.DEFECTS.NON_UNIFORM_CUPS' | translate }}</strong></p>
+        </div>
+        <div class="checkboxes-container">
+          <mat-checkbox
+            *ngFor="let control of nonUniformCups.controls; let i = index"
+            [formControlName]="i"
+            color="primary"
+          >
+          </mat-checkbox>
+        </div>
+      </div>
+    </div>
+    <div class="container-data">
+      <div formArrayName="defective_cups" class="checkboxes-row">
+        <div class="container-title">
+          <p><strong>{{'AFFECTIVE_FORM.DEFECTS.DEFECTIVE_CUPS' | translate }}</strong></p>
+        </div>
+        <div class="checkboxes-container">
+          <mat-checkbox
+            *ngFor="let control of defectiveCups.controls; let i = index"
+            [formControlName]="i"
+            color="primary"
+          >
+          </mat-checkbox>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="defects-any" formArrayName="defects_any">
+    <div class="container-defects-any">
+      <p><strong>{{'AFFECTIVE_FORM.DEFECTS.DEFECTS_ANY' | translate }}</strong></p>
+    </div>
+    <div class="checkboxes-container_any">
+      <mat-checkbox *ngFor="let control of defectsAny.controls; let i = index" [formControlName]="i" color="primary">
+        {{ ('AFFECTIVE_FORM.DEFECTS.' + getTranslationKey(defectivesAny[i])) | translate}}
+      </mat-checkbox>
+    </div>
+  </div>
+</section>

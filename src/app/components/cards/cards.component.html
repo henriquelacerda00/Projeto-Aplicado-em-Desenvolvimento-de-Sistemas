@@ -1,0 +1,6 @@
+<section class="cards-container">
+  <mat-card appearance="outlined" [routerLink]="" [class.disabled]="disabled" [class.verified]="verified">
+    <mat-icon aria-hidden="" aria-label="" fontIcon="check_circle" *ngIf="verified"></mat-icon>
+    <img mat-card-image [src]="card.icon" [alt]="" />
+  </mat-card>
+</section>

@@ -1,0 +1,29 @@
+<div class="extrinsic-groups">
+  <app-checklist-with-notes
+    [group]="'FARMING'"
+    [title]="'EXTRISINC_FORM.FARMING.TITLE' | translate"
+    [items]="farmingItems"
+    (valueChange)="onFarmingChange($event)">
+  </app-checklist-with-notes>
+
+  <app-checklist-with-notes
+    [group]="'PROCESSING'"
+    [title]="'EXTRISINC_FORM.PROCESSING.TITLE' | translate"
+    [items]="processingItems"
+    (valueChange)="onProcessingChange($event)">
+  </app-checklist-with-notes>
+
+  <app-checklist-with-notes
+    [group]="'TRADING'"
+    [title]="'EXTRISINC_FORM.TRADING.TITLE' | translate"
+    [items]="tradingItems"
+    (valueChange)="onTradingChange($event)">
+  </app-checklist-with-notes>
+
+  <app-checklist-with-notes
+    [group]="'CERTIFICATIONS'"
+    [title]="'EXTRISINC_FORM.CERTIFICATIONS.TITLE' | translate"
+    [items]="certificationsItems"
+    (valueChange)="onCertificationsChange($event)">
+  </app-checklist-with-notes>
+</div>

@@ -1,0 +1,11 @@
+.dashboard{
+  padding: 2em 3.5em;
+  background-color: #ffffff;
+  
+  .dashboard-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: hidden;
+  }
+}

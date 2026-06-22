@@ -1,0 +1,45 @@
+.size-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+
+  .example-card {
+    margin-bottom: 2em;
+
+    mat-card-header {
+      display: flex;
+      flex-direction: column;
+
+      mat-card-title {
+        font-size: 1.5em;
+        font-weight: 600;
+        text-align: center;
+      }
+    }
+    
+
+    mat-card-actions {
+      display: flex;
+      justify-content: center;
+      ;
+      margin: 2em;
+    }
+  }
+
+  .weight {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2em;
+
+    mat-form-field {
+      width: 35%;
+      margin: 0 auto;
+    }
+  }
+
+}

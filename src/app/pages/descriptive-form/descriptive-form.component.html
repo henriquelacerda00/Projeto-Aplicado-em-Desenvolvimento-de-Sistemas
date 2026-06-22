@@ -1,0 +1,130 @@
+<section class="descriptive-form">
+  <app-container>
+    <mat-card class="example-card" appearance="outlined">
+      <div #formheader></div>
+      <mat-card-header>
+        <mat-card-title>
+          {{'CARDS.DESCRIPTIVE_FORM' | translate }}
+        </mat-card-title>
+        <app-forms-header [formGroup]="formHeader" [highlightTrigger]="animationTrigger"></app-forms-header>
+      </mat-card-header>
+
+      <mat-card-content>
+
+        <mat-stepper [linear]="false" #stepper (selectionChange)="onStepChange($event)">
+
+          <!-- STEP 1: FRAGRANCE -->
+          <mat-step [label]="'DESCRIPTIVE_FORM.FRAGRANCE' | translate">
+            <div class="container-group-descriptive">
+
+              <app-group-descriptive [titulo]="'DESCRIPTIVE_FORM.FRAGRANCE' | translate"
+                [parentForm]="fragranceForm">
+              </app-group-descriptive>
+
+              <mat-paginator [length]="samples.length" [pageSize]="1" [pageIndex]="fragranceSampleIndex"
+                (page)="onPageChange($event, 0)">
+              </mat-paginator>
+
+              <button mat-flat-button color="primary"
+                (click)="sendBulkData('Fragrance')"
+                [disabled]="!isLastSample || isLoading">
+                <ng-container *ngIf="!isLoading; else loadingFragrance">
+                  {{ 'SEND_DATA' | translate }}
+                </ng-container>
+              </button>
+
+              <ng-template #loadingFragrance>
+                <div class="loading-container">
+                  <mat-spinner diameter="24"></mat-spinner>
+                </div>
+              </ng-template>
+
+            </div>
+          </mat-step>
+
+          <!-- STEP 2: AROMA -->
+          <mat-step [label]="'DESCRIPTIVE_FORM.AROMA' | translate">
+            <div class="container-group-descriptive">
+
+              <app-group-descriptive [titulo]="'DESCRIPTIVE_FORM.AROMA' | translate"
+                [parentForm]="aromaForm">
+              </app-group-descriptive>
+
+              <mat-paginator [length]="samples.length" [pageSize]="1" [pageIndex]="aromaSampleIndex"
+                (page)="onPageChange($event, 1)">
+              </mat-paginator>
+
+              <button mat-flat-button color="primary"
+                (click)="sendBulkData('Aroma')"
+                [disabled]="!isLastSample || isLoading">
+                <ng-container *ngIf="!isLoading; else loadingAroma">
+                  {{ 'SEND_DATA' | translate }}
+                </ng-container>
+              </button>
+
+              <ng-template #loadingAroma>
+                <div class="loading-container">
+                  <mat-spinner diameter="24"></mat-spinner>
+                </div>
+              </ng-template>
+
+            </div>
+          </mat-step>
+
+          <!-- STEP 3: BEVERAGE / OTHER CHARACTERISTICS -->
+          <mat-step label="Beverage">
+
+            <div class="container-group-descriptive">
+              <app-group-descriptive [titulo]="'DESCRIPTIVE_FORM.AFTERTASTE' | translate"
+                [titulo2]="'DESCRIPTIVE_FORM.FLAVOR' | translate" [ShowHiddens]="true"
+                [parentForm]="flavorAfterTasteForm">
+              </app-group-descriptive>
+            </div>
+
+            <div class="container-group-descriptive">
+              <app-group-descriptive [titulo]="'DESCRIPTIVE_FORM.ACIDITY' | translate" [ShowSimple]="true"
+                [parentForm]="acidityForm">
+              </app-group-descriptive>
+            </div>
+
+            <div class="container-group-descriptive">
+              <app-group-descriptive [titulo]="'DESCRIPTIVE_FORM.SWEETNESS' | translate" [ShowSimple]="true"
+                [parentForm]="sweetnessForm">
+              </app-group-descriptive>
+            </div>
+
+            <div class="container-group-descriptive">
+              <app-group-descriptive [titulo]="'DESCRIPTIVE_FORM.MOUTHFEEL' | translate" [ShowSimple]="true"
+                [parentForm]="mouthfeelForm">
+              </app-group-descriptive>
+
+              <app-mouthfeel-checkboxes [parentFormGroup]="mouthfeelForm">
+              </app-mouthfeel-checkboxes>
+
+              <mat-paginator [length]="samples.length" [pageSize]="1" [pageIndex]="beverageSampleIndex"
+                (page)="onPageChange($event, 2)">
+              </mat-paginator>
+
+              <button mat-flat-button color="primary"
+                (click)="sendBulkData('Beverage')"
+                [disabled]="!isLastSample || isLoading">
+                <ng-container *ngIf="!isLoading; else loadingBeverage">
+                  {{ 'SEND_DATA' | translate }}
+                </ng-container>
+              </button>
+
+              <ng-template #loadingBeverage>
+                <div class="loading-container">
+                  <mat-spinner diameter="24"></mat-spinner>
+                </div>
+              </ng-template>
+
+            </div>
+          </mat-step>
+
+        </mat-stepper>
+
+      </mat-card-content>
+    </mat-card>
+  </app-container>
+</section>

@@ -1,0 +1,15 @@
+<section class="impression">
+  <h2>{{'AFFECTIVE_FORM.LEGEND.TITLE2' | translate}}</h2>
+  <div class="custom-radio-group">
+      @for (button of buttons; track button) {
+      <label>
+        <input
+          type="radio"
+          [checked]="selectedValue === button"
+          (click)="onSelect(button)"
+        />
+        <span class="custom-radio-button">{{ button }}</span>
+      </label>
+      }
+    </div>
+</section>

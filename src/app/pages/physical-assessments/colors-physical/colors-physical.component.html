@@ -1,0 +1,12 @@
+<div class="colors-container" [formGroup]="formGroup">
+  <h2><strong>{{ 'COLORS.TITULO' | translate}}</strong></h2>
+  <div class="color-list">
+    @for(color of colors; track color) {
+    <div class="color-item">
+      <mat-checkbox [formControlName]="color.name">
+        <span class="color-name">{{ color.name | translate }}</span>
+      </mat-checkbox>
+    </div>
+    }
+  </div>
+</div>

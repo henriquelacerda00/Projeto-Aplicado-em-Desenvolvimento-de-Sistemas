@@ -1,0 +1,44 @@
+<section class="size-table">
+  <app-container>
+    <mat-card class="example-card" appearance="outlined">
+      <form [formGroup]="sizeForm" (ngSubmit)="onSubmit()">
+        <mat-card-header>
+          <mat-card-title>{{'CARDS.SIZE_TABLE' | translate }}</mat-card-title>
+          <div #formheader></div>
+          <app-forms-header [formGroup]="formHeader" [highlightTrigger]="animationTrigger"></app-forms-header>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="weight">
+            <p>{{'SIZE_TABLE.P_TAG' | translate}}:</p>
+            <mat-form-field appearance="outline">
+              <mat-label>{{'SIZE_TABLE.WHEIGHT' | translate}}</mat-label>
+              <input type="number" matInput placeholder="" min="0" [formControl]="weightWithoutDefects" />
+              <mat-icon matSuffix>balance</mat-icon>
+              @if(this.weightWithoutDefects.hasError('required')){
+              <mat-error>Campo obrigatório*</mat-error>
+              }@if(this.weightWithoutDefects.hasError('min')){
+              <mat-error>Valor inserido não pode ser 0!*</mat-error>
+              }
+            </mat-form-field>
+            <app-table-size [formGroup]="sizeForm" [formArray]="sizes">
+            </app-table-size>
+            <mat-divider></mat-divider>
+          </div>
+        </mat-card-content>
+
+        <mat-paginator *ngIf="samples && samples.length > 0" [length]="samples.length" [pageSize]="1"
+          [pageSizeOptions]="[1]" showFirstLastButtons (page)="onPageChange($event)">
+        </mat-paginator>
+
+        <mat-card-actions>
+          <button type="submit" mat-flat-button color="primary" [disabled]="!isLastSample" *ngIf="!loading.loading(); else loadingSpinner">{{'SEND_DATA' | translate }}</button>
+        </mat-card-actions>
+        <ng-template #loadingSpinner>
+          <div class="loading-container">
+            <mat-spinner></mat-spinner>
+          </div>
+        </ng-template>
+      </form>
+    </mat-card>
+  </app-container>
+</section>

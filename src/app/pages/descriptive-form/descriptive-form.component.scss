@@ -1,0 +1,50 @@
+.descriptive-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+
+  .example-card {
+    margin-bottom: 2em;
+
+    mat-card-header {
+      display: flex;
+      flex-direction: column;
+
+      mat-card-title {
+        font-size: 1.5em;
+        font-weight: 600;
+        text-align: center;
+      }
+    }
+
+    mat-card-content {
+      .container-group-descriptive {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .bt-fragrance {
+          width: 15%;
+          margin: 0 auto;
+          margin-bottom: 2em;
+        }
+      }
+
+      .loading-container{
+        display: flex;
+        justify-content: center;
+      }
+
+    }
+
+    mat-card-actions {
+      display: flex;
+      justify-content: center;
+      margin: 2em;
+    }
+
+
+  }
+}

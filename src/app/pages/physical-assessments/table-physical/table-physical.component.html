@@ -1,0 +1,67 @@
+<div [formGroup]="formGroup">
+  <div formArrayName="table">
+    <table mat-table [dataSource]="formArray.controls" class="mat-elevation-z8">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>{{ 'PHYSICAL_ASSESSMENT.TITLE' | translate }}</th>
+        <td mat-cell *matCellDef="let row">
+          {{'PHYSICAL_ASSESSMENT.'+ row.get("name")?.value | translate }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="ratio">
+        <th mat-header-cell *matHeaderCellDef>{{ 'PHYSICAL_ASSESSMENT.RADIO' | translate }}</th>
+        <td mat-cell *matCellDef="let row">
+          ({{ row.get("ratio")?.value }}:1)
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="defectCount">
+        <th mat-header-cell *matHeaderCellDef>{{ 'PHYSICAL_ASSESSMENT.DEFECT_COUNT' | translate }}</th>
+        <td mat-cell *matCellDef="let row; let i = index">
+          <mat-form-field appearance="outline" class="defect-input">
+            <input
+              matInput
+              type="number"
+              [formControl]="row.get('defectCount')"
+              (input)="updateFullDefect(i)"
+              min="0"
+            />
+          </mat-form-field>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="fullDefectCount">
+        <th mat-header-cell *matHeaderCellDef>{{ 'PHYSICAL_ASSESSMENT.FULL_DEFECTS' | translate }}</th>
+        <td mat-cell *matCellDef="let row">
+          {{ row.get("fullDefectCount")?.value }}
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+
+  <!-- Rodapé -->
+  <div class="results" style="margin-top: 20px">
+    <p><strong>{{ 'PHYSICAL_ASSESSMENT.TOTAL_GREEN_DEFECTS' | translate }}:</strong> {{ calcularTotalGeral() }}</p>
+    <p><strong>{{ 'PHYSICAL_ASSESSMENT.TGD_300G' | translate }}:</strong> {{ calcularTGD300g() }}</p>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'PHYSICAL_ASSESSMENT.MOISTURE' | translate }}</mat-label>
+      <input matInput placeholder="%" name="moisture" formControlName="moisture" />
+      <mat-icon matSuffix>water_drop</mat-icon>
+    </mat-form-field>
+  </div>
+
+  <div class="cob-type">
+    <mat-card class="cob-card" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>{{'PHYSICAL_ASSESSMENT.COB_TYPE' | translate}}:</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <h2>{{ cobtype }}</h2>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

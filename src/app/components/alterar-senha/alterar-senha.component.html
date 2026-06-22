@@ -1,0 +1,29 @@
+<app-container>
+  <section class="login">
+    <mat-card class="card-login" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title><strong>ALTERAR SENHA</strong></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <img
+          class="login-logo"
+          mat-card-image
+          src="assets/logo-sensorial.png"
+          alt="Photo of a Shiba Inu"
+        />
+        <div class="form-container">
+          <form>
+            <mat-form-field appearance="outline">
+              <mat-label>Senha</mat-label>
+              <input type="password" matInput placeholder="Escreva sua senha" name="password" [(ngModel)]="password"/>
+              <mat-icon matSuffix>password</mat-icon>
+            </mat-form-field>
+            <mat-card-actions>
+              <button type="submit" mat-flat-button (click)="alterarSenha()">Alterar Senha</button>
+            </mat-card-actions>
+          </form>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</app-container>

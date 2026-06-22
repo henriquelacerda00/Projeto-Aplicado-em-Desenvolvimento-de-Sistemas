@@ -1,0 +1,108 @@
+.header {
+  mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em 3em;
+    background: #90aae9;
+    .menu{
+      display: flex;
+      align-items: center;
+      gap: 1em;
+
+      h1{
+        color: #246427;
+        font-weight: 500;
+        font-size: 32px;
+        cursor: pointer;
+      }
+    }
+
+    .links-container {
+      display: flex;
+      align-items: center;
+      gap: 1.5em;
+
+      .my-analyses {
+        width: 150px;
+      }
+
+      /* Toggle + Bandeiras */
+      .language-switch {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        .flag {
+          width: 32px;
+          height: 22px;
+          opacity: 0.3;
+          transition: opacity 0.3s ease, transform 0.2s ease;
+
+          &.active {
+            opacity: 1;
+            transform: scale(1.1);
+          }
+        }
+
+        ::ng-deep .mdc-switch__icon{
+          display: none;
+        }
+
+        ::ng-deep .mat-slide-toggle-thumb {
+          background-color: #eeeeee !important;
+        }
+
+        ::ng-deep .mat-slide-toggle-bar {
+          background-color: rgba(245, 245, 245, 0.4) !important;
+        }
+
+        ::ng-deep .mdc-switch__icons {
+          border-radius: 50%;
+          transition: background-color 0.3s ease;
+        }
+
+        ::ng-deep .mdc-switch--checked .mdc-switch__icons {
+          background-color: #d32f2f !important; 
+        }
+
+        ::ng-deep .mdc-switch__track::before {
+          background: #fedf00;
+          border: none;
+        }
+
+        ::ng-deep .mdc-switch:not(.mdc-switch--checked) .mdc-switch__icons {
+          background-color: #388e3c !important; 
+        }
+        
+      }
+
+      .profile {
+        display: flex;
+        font-size: 1.5em;
+        align-items: center;
+        vertical-align: middle;
+
+        mat-icon {
+          font-size: 0.8em;
+          margin: 0;
+          padding: 0;
+          vertical-align: middle;
+          width: 26px;
+          height: 26px;
+        }
+      }
+      .logout {
+        display: flex;
+        font-size: 1.5em;
+        align-items: center;
+        vertical-align: middle;
+
+        mat-icon {
+          margin: 0;
+          padding: 0;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}

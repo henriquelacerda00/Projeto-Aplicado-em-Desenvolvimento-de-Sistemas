@@ -1,0 +1,73 @@
+.impression {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+
+  .custom-radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+
+    label {
+      cursor: pointer;
+      display: flex;
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    .custom-radio-button {
+      height: 40px;
+      width: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #e2e2e2;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    label:hover .custom-radio-button {
+      background-color: #979797;
+    }
+
+    input[type="radio"]:checked + .custom-radio-button {
+      background-color: #1832c5;
+      color: white;
+      border-color: #1832c5;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .impression {
+    h2 {
+      font-size: 1.05rem;
+    }
+
+    .custom-radio-group {
+      gap: 0.4rem;
+
+      .custom-radio-button {
+        width: 36px;
+        height: 36px;
+        font-size: 13px;
+      }
+    }
+  }
+}

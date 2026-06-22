@@ -1,0 +1,131 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5em;
+
+  .custom-form-field {
+    width: 300px;
+    /* Define a largura do campo */
+  }
+
+  .custom-form-field .mat-form-field-wrapper {
+    height: 60px;
+    /* Define a altura do campo */
+  }
+
+  .custom-form-field .mat-form-field-label-wrapper {
+    width: 100px;
+    /* Define a largura do label */
+  }
+
+  // Força a cor dos ícones matSuffix
+  .custom {
+    color: #333;
+    font-size: 18px;
+    margin-right: 8px;
+  }
+
+  .custom-form-field {
+    .fa-solid {
+      font-size: 18px;
+      color: rgba(0, 0, 0, 0.54);
+      margin-right: 8px;
+      transition: color 0.1s;
+
+      &.icon-error {
+        color: #d3302d; // vermelho principal
+      }
+
+
+    }
+
+    // hover apenas intensifica o erro (não depende de icon-error dentro do hover)
+    &:hover .fa-solid.icon-error {
+      color: #93000A;
+    }
+  }
+
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 30%;
+      padding-bottom: 1.5em;
+
+      img {
+        width: 75%;
+        height: auto;
+      }
+
+      .sample-number-container {
+        margin-top: 1em;
+        width: 100%;
+
+        mat-form-field {
+          width: 100%;
+        }
+      }
+    }
+
+
+
+    .campos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+      color: #333;
+      padding: 1em 0;
+
+
+
+      mat-form-field {
+        width: 100%;
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+}
+
+:host ::ng-deep .sample-number-container.highlight .mdc-notched-outline {
+  animation: pulseOutline 2s ease-in-out;
+  
+}
+
+@keyframes pulseOutline {
+  0% {
+    filter: drop-shadow(0 0 0 rgba(33, 150, 243, 0));
+  }
+
+  15% {
+    filter: drop-shadow(0 0 8px rgba(33, 150, 243, 0.9));
+  }
+
+  30% {
+    filter: drop-shadow(0 0 0 rgba(33, 150, 243, 0));
+  }
+
+  45% {
+    filter: drop-shadow(0 0 8px rgba(33, 150, 243, 0.9));
+  }
+
+  60% {
+    filter: drop-shadow(0 0 0 rgba(33, 150, 243, 0));
+  }
+
+  75% {
+    filter: drop-shadow(0 0 8px rgba(33, 150, 243, 0.9));
+  }
+
+  100% {
+    filter: drop-shadow(0 0 0 rgba(33, 150, 243, 0));
+  }
+}

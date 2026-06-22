@@ -1,0 +1,27 @@
+.mat-elevation-z8 {
+  /* Alvo direto na coluna "G" usando classe gerada */
+  ::ng-deep th.cdk-column-G,
+  ::ng-deep td.cdk-column-G {
+    text-align: center !important;
+    max-width: 150px;
+  }
+  ::ng-deep th.cdk-column-size,
+  ::ng-deep td.cdk-column-size {
+    align-items: flex-start;
+  }
+  ::ng-deep th.cdk-column--,
+  ::ng-deep td.cdk-column-- {
+    text-align: center !important;
+  }
+
+  .size-field {
+    max-width: 80px;
+    margin: 12px auto;
+  }
+
+  ::ng-deep .mat-mdc-form-field-subscript-wrapper {
+    display: none !important;
+    height: 0 !important;
+  }
+  
+}

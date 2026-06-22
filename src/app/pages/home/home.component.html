@@ -1,0 +1,15 @@
+<!-- <app-dashboard></app-dashboard> -->
+<section class="apresentacao">
+    <div class="apresentacao-container">
+        <h1>{{"WELCOME.TITLE" | translate}}</h1>
+        <p> <strong>{{"WELCOME.ADAPTED" | translate}}</strong><br>
+            Coffee Value Assessment <br>
+        </p>
+        <p>
+            {{"WELCOME.PARAGRAPH" | translate}} <br> <a href="sca.coffee/value-assessment">sca.coffee/value-assessment</a>
+        </p>
+        <img src="assets/logo-sensorial.png" alt="logo cva" />
+        <button mat-flat-button class="bt-sessão" [routerLink]="['/cadastrar-sessao']" *ngIf="userRole === 'P'">Cadastrar Sessão</button>
+        <button mat-flat-button class="bt-sessão" [routerLink]="['/minha-sessao']" *ngIf="userRole === 'Q'">Acessar Analises</button>
+    </div>
+</section>

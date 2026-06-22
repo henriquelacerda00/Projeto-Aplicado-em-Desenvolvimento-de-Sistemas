@@ -1,0 +1,48 @@
+.tree {
+  background-color: #f5f5f5;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  .tree-invisible {
+    display: none;
+  }
+
+  mat-tree {
+    background-color: #f5f5f5;
+    width: 100%;
+  }
+
+  .notes-field {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin: 0.75rem 0 0 2rem;
+  }
+}
+
+.mat-tree-node,
+mat-nested-tree-node {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .tree {
+    .notes-field {
+      max-width: 100%;
+      margin-left: 1rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .tree {
+    .notes-field {
+      margin-left: 0;
+    }
+  }
+}

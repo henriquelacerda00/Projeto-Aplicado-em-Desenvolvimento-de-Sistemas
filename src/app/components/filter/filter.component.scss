@@ -1,0 +1,20 @@
+:host ::ng-deep {
+  padding: 16px;
+}
+
+.filter-container {
+  width: 100%;
+  padding: 16px;
+}
+
+.filter__form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.form__tableType {
+  width: 30%;
+}

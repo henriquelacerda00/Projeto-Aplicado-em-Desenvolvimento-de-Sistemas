@@ -1,0 +1,31 @@
+.apresentacao {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+}
+
+.apresentacao-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  p {
+    max-width: 800px;
+    margin: 0 auto 10px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  img {
+    width: 270px;
+    margin-bottom: 10px;
+  }
+
+  .bt-sessão {
+    max-width: 250px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,96 @@
+.expanded-scrollable {
+  max-width: 100%; /* ocupa a largura total da tabela */
+  overflow-x: auto; /* cria scroll horizontal */
+  white-space: nowrap; /* impede quebra de linha */
+  padding: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.card {
+  display: flex;
+  margin-top: 3em;
+}
+
+::ng-deep .accordion-container {
+  min-height: 500px;
+  width: auto;
+  background-color: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin: 2em 0;
+  h2 {
+    text-align: center;
+  }
+
+
+
+  .export-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 1em 0;
+
+    .excel{
+      background-color: #1c7e09;
+      color: white;
+    }
+
+    .pdf{
+      background-color: #db1406;
+      color: white;
+    }
+
+  }
+}
+
+// Estilos para a tabela dinâmica
+.mat-mdc-table {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 16px;
+
+  .mat-mdc-header-cell {
+    background-color: #f5f5f5;
+    font-weight: 600;
+    padding: 12px 8px;
+    white-space: nowrap;
+    min-width: 120px;
+    text-align: center;
+  }
+
+  .mat-mdc-cell {
+    padding: 12px 8px;
+    white-space: nowrap;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: center;
+  }
+
+  .mat-mdc-row:hover {
+    background-color: #f9f9f9;
+  }
+
+  .mat-mdc-header-row {
+    background-color: #f5f5f5;
+  }
+}
+
+// Container para scroll horizontal em tabelas grandes
+.table-container {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  gap: 16px;
+  color: #666;
+}

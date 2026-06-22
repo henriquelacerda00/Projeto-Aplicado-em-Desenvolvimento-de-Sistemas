@@ -1,0 +1,223 @@
+{
+  "TOOL_BAR": {
+    "MY_ANALYSES": "Minhas Análises",
+    "ABOULT": "Sobre"
+  },
+
+  "CARDS": {
+    "PHYSICAL_ASSESSMENT": "Formulário Físico",
+    "SIZE_TABLE": "Tabela de Tamanhos",
+    "DESCRIPTIVE_FORM": "Formulário Descritivo",
+    "AFFECTIVE_FORM": "Formulário Afetivo",
+    "EXTRISINC_FORM": "Formulário Extrínseco"
+  },
+
+  "WELCOME":{
+    "TITLE": "Bem Vindo ao CVA DATA",
+    "ADAPTED": "Adaptado de:",
+    "PARAGRAPH": "Alpha V1 - Setembro de 2023 Obrigado por testar a Alpha V1 da Avaliação Física, uma das quatro avaliações a serem concluídas dentro do Sistema de Avaliação de Valor do Café (Coffee Value Assessment CVA) da SCA. A SCA prevê a realização de pesquisas com usuários sobre esta avaliação em 2024. Para saber mais, por favor, visite"
+  },
+
+  "FORMS_HEADER": {
+    "SAMPLE_NUMBER": "Número da amostra",
+    "NAME": "Nome",
+    "DATE": "Data",
+    "PURPOSE": "Projeto"
+  },
+
+  "SEND_DATA": "Enviar Dados",
+
+  "COLORS": {
+    "TITULO": "Cor",
+    "BLUE__GREEN": "Azul-esverdeado",
+    "BLUISH__GREEN": "Verde-azulado",
+    "GREEN": "Verde",
+    "GREENISH": "Esverdeada",
+    "YELLOW__GREEN": "Amarelo-esverdeado",
+    "PABLE__YELLOW": "Amarelo pálido",
+    "YELLOWISH": "Amarelada",
+    "BROWNISH": "Amarronzada"
+  },
+
+  "PHYSICAL_ASSESSMENT": {
+    "FULL_BLACK": "Grão preto",
+    "FULL_SOUR": "Grão ardido",
+    "DRIED_CHERRY": "Coco",
+    "FUNGUS_DAMAGE": "Danicado por fungo",
+    "FOREIGN_MATTER": "Matéria estranha",
+    "SEVERE_INSECT_DAMAGE": "Grão severamente brocado",
+    "PARTIAL_BLACK": "Parcialmente preto",
+    "PARTIAL_SOUR": "Parcialmente ardido",
+    "PARCHMENT": "Pergaminho",
+    "FLOATER": "Bóia",
+    "IMMATURE_UNRIPE": "Imaturo",
+    "WITHERED": "Grão chocho",
+    "SHELL": "Concha",
+    "BROKEN_CHIPPED_CUT": "Quebrado/Lascado/Cortado",
+    "HULL_HUSK": "Casca",
+    "SLIGHT_INSECT_DAMAGE": "Grão levemente brocado",
+    "RADIO": "Grau",
+    "DEFECT_COUNT": "Contagem de defeitos",
+    "FULL_DEFECTS": "Defeitos totais",
+    "TOTAL_GREEN_DEFECTS": "TOTAL DE DEFEITOS DO CAFÉ VERDE",
+    "TGD_300G": "CTD em 300g",
+    "MOISTURE": "Umidade",
+    "COB_TYPE": "Nota COB"
+  },
+
+  "SIZE_TABLE": {
+    "WHEIGHT": "Peso",
+    "P_TAG": "Peso sem defeitos",
+    "SIZE": "Tamanho"
+  },
+
+  "DESCRIPTIVE_FORM": {
+    "FRAGRANCE": "Fragrância",
+    "AROMA": "Aroma",
+    "FLAVOR": "Sabor",
+    "AFTERTASTE": "Retrogosto",
+    "ACIDITY": "Acidez",
+    "SWEETNESS": "Doçura",
+    "MOUTHFEEL": "Sensação Na Boca",
+    "OVERALL": "Impressão Geral",
+    "NOTES": "Anotações",
+    "FLORAL": "Floral",
+    "FRUITY": "Frutado",
+    "BERRY": "Frutas vermelhas",
+    "DRIED_FRUIT": "Frutas secas",
+    "CITRUS_FRUIT": "Frutas cítricas",
+    "SOUR": "Azedo",
+    "FERMENTED": "Fermentado",
+    "SOUR_FERMENTED": "Azedo/Fermentado",
+    "GREEN_VEGETATIVE": "Verde/Vegetal",
+    "OTHER": "Outros",
+    "CHEMICAL": "Químico",
+    "MUSTY_EARTHY": "Mofado/Terroso",
+    "WOODY": "Amadeirado",
+    "ROASTED": "Torrado",
+    "CEREAL": "Cereal",
+    "BURNT": "Queimado",
+    "TOBACCO": "Tabaco",
+    "NUTTY_COCOA": "Castanhas/Cacau",
+    "NUTTY": "Castanhas",
+    "COCOA": "Cacau",
+    "SPICE": "Especiarias",
+    "SWEET": "Doce",
+    "VANILLA_VANILLIN": "Baunilha/Vanilina",
+    "BROWN_SUGAR": "Açúcar mascavo",
+
+    "SLIDER": {
+      "LOW": "Baixa",
+      "MEDIUM": "Media",
+      "HIGH": "Alta"
+    },
+
+    "MAIN_TASTES": {
+      "SALTY": "Salgado",
+      "BITTER" : "Amargo",
+      "SOUR": "Azedo",
+      "UMAMI": "Umami",
+      "SWEET": "Doce"
+    },
+
+    "MF_CHECK_BOXES": {
+      "ROUGH": "Áspero (Granuloso, Calcário, Arenoso)",
+      "SMOOTH": "Suave (Aveludado, Sedoso, Licoroso)",
+      "METALLIC": "Metálico",
+      "OILY": "Amanteigado",
+      "MOUTH_DRYING": "Boca seca"
+    }
+
+  },
+
+  "AFFECTIVE_FORM": {
+
+    "LEGEND": {
+      "TITLE": "Impressão De Qualidade",
+      "TITLE2": "Impressão de Valor",
+      "EXTREMELY_LOW": "EXTREMAMENTE BAIXO",
+      "VERY_LOW": "MUITO BAIXO",
+      "MODERATELY_LOW": "MODERADAMENTE BAIXO",
+      "SLIGHTLY_LOW": "UM POUCO BAIXO",
+      "NEITHER_HIGH_NOR_LOW": "NEM ALTO NEM BAIXO",
+      "SLIGHTLY_HIGH": "UM POUCO ALTO",
+      "MODERATELY_HIGH": "MODERADAMENTA ALTO",
+      "VERY_HIGH": "MUITO ALTO",
+      "EXTREMELY_HIGH": "EXTREMAMENTE ALTO"
+    },
+
+    "DEFECTS": {
+      "NON_UNIFORM_CUPS": "XÍCARAS NÃO UNIFORMES",
+      "DEFECTIVE_CUPS": "XÍCARAS COM DEFEITO",
+      "DEFECTS_ANY": "XÍCARAS NÃO UNIFORMES",
+      "MOLDY": "MOFADO",
+      "PHENOLIC": "FENÓLICO",
+      "POTATO": "BATATA"
+    }
+
+  },
+  "EXTRISINC_FORM": {
+
+    "FARMING": {
+      "GROUP": "FARMING",
+      "TITLE": "PRODUÇÃO",
+      "COUNTRY": "Pais",
+      "REGION": "Região",
+      "NAME_OF_FARM_OR_CO_OP": "Nome da propriedade ou cooperativa",
+      "NAME_OF_PRODUCER_S": "Nome do produtor(es)",
+      "SPECIES": "Espécies",
+      "VARIETY_OR_VARIETIES": "Variedade ou variedades",
+      "HARVEST_DATE_YEAR": "Data/ano da colheita",
+      "OTHER": "Outros"
+    },
+
+    "PROCESSING": {
+      "GROUP": "PROCESSING",
+      "TITLE": "PROCESSAMENTO",
+      "NAME_OF_PROCESSOR_S": "Nome do processador(es)",
+      "WET_MILL_STATION": "Via úmida / Planta de processamento",
+      "DRY_MILL": "Via seca / Planta de processamento",
+      
+      "TYPE_OF_PROCESSING": {
+        "TITLE": "Tipo de processamento",
+        "FRUIT_DRIED": "Natural(Via seca)",
+        "MUCIMAGE_DRIED": "Cereja descascada (semi-seco , Honey)",
+        "PARCHMENT_DRIED": "Seco em pergaminho (Lavado, processo úmido , semi-lavado, desmucilado)",
+        "SEED_DRIED": "Grão sem pergaminho",
+        "OTHER": "Outros"
+      },
+
+      "TYPE_OF_FERMENTATION": {
+        "TITLE": "Tipo de fermentação",
+        "LACTIC": "Lática",
+        "ANAEROBIC": "Anaerobica",
+        "CARBONIC_MACERATION": "Maceração carbônica",
+        "MULTIPLE_FERMENTATIONS": "Multiplas fermentações",
+        "CO_FERTILIZATION": "Co-fermentação"
+      }
+
+    },
+
+    "TRADING": {
+      "GROUP": "TRADING",
+      "TITLE": "NEGOCIAÇÃO COMÉRCIAL",
+      "SIZE_GRADE": "Classificação de tamanho",
+      "OTHER_GRADE": "Outra classificação",
+      "DRY_MILL": "Local de descascamento",
+      "ICO_NUMBER": "Número ICO",
+      "OTHER": "Outros"
+    },
+
+    "CERTIFICATIONS": {
+      "GROUP": "CERTIFICATIONS",
+      "TITLE": "CERTIFICAÇÕES",
+      "4C": "4C",
+      "FAIR_TRADE": "Fair Trade",
+      "ORGANIC": "Orgânico",
+      "RAINFOREST_ALLIANCE": "Rainforest Alliance",
+      "GEOGRAPHICAL_INDICATION": "Indicação geográfica",
+      "ABIC": "ABIC",
+      "OTHER": "Outros"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.colors-container {
+  display: flex;
+  justify-content: flex-start;
+  font-family: "Roboto", sans-serif;
+  align-items: center;
+
+
+  h2 {
+    font-size: 1.25rem; // 20px
+    color: #333;
+    margin-right: 3em;
+    margin-left: 2em;
+  }
+
+  .color-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px; // Espaçamento entre os itens da lista
+  }
+
+  .color-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; // Alinha o checkbox à esquerda e a caixa de cor à direita
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out;
+
+
+    .color-name {
+      margin-left: 2px;
+      font-size: 1rem; // 16px
+    }
+
+    .color-box {
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+  }
+}

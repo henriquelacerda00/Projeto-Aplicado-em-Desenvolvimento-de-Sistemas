@@ -1,0 +1,19 @@
+.google-login-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.5em 1em;
+  border: 1px solid #ccc;
+  border-radius: 24px;
+  background-color: white;
+
+  .google-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+  span {
+    font-weight: 500;
+  }
+}

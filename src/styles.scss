@@ -1,0 +1,102 @@
+/* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.custom-form-field {
+  @include mat.form-field-overrides((
+    container-height: 60px,
+    container-vertical-padding: 24px,
+
+    container-text-size: 1.5rem,
+    outlined-label-text-size: 1.5rem,
+    outlined-outline-width: 1px,
+    outlined-input-text-color: #333,
+    outlined-caret-color: #333,
+
+    filled-container-color: #fff,
+    filled-label-text-size: 1.5rem,
+    filled-input-text-color: #333,
+    filled-caret-color: #333,
+    filled-container-shape: rounded,
+    filled-with-label-container-padding-top: 10px,
+    filled-with-label-container-padding-bottom: 6px
+  ));
+}
+
+.sidebar-form-field {
+  @include mat.form-field-overrides((container-height: 40px,
+      container-vertical-padding: 8px,
+      outlined-outline-width: 1px,
+      outlined-label-text-size: 0.95rem,
+      outlined-input-text-color: #333,
+      outlined-caret-color: #333,
+
+      // Filled tokens
+      filled-container-color: #fff,
+      filled-label-text-size: 0.85rem,
+      filled-input-text-color: #333,
+      filled-caret-color: #333,
+      filled-container-shape: rounded, // <-- arredonda todo o campo
+      filled-with-label-container-padding-top: 10px,
+      filled-with-label-container-padding-bottom: 6px));
+}
+
+.small-select-panel {
+  @include mat.option-overrides((
+    label-text-size: 12px,
+    label-text-line-height: 8px,
+  ));
+}
+
+
+.mat-form-field-label-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center; // centraliza verticalmente o label
+}
+
+.mat-form-field-label {
+  line-height: 1.2; // ou ajuste para o que ficar melhor
+  font-size: 0.75rem; // já ajustado no seu override, mas pode reafirmar
+}
+
+.mat-form-field-flex {
+  height: 100%;
+  align-items: center;
+}
+
+.mat-form-field-infix {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 5px auto !important;
+}
+
+input.mat-input-element {
+  padding-top: 6px !important;
+  padding-bottom: 4px !important;
+  height: auto !important;
+  line-height: 1.2;
+  font-size: 14px;
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.2;
+    opacity: 1;
+  }
+}

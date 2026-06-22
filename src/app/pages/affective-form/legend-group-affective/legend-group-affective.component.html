@@ -1,0 +1,12 @@
+<fieldset class="legend-fieldset">
+  <legend>{{ title | translate }}</legend>
+  <div class="opcoes">
+    @for (item of legendItems; track item.number) {
+    <label>
+      <input type="radio" [id]="'item_Legenda_' + item.number" disabled />
+      <span class="radio-label">{{ item.number }}</span>
+      <span>{{('AFFECTIVE_FORM.LEGEND.' + getTranslationKey(item.description)) | translate }}</span>
+    </label>
+    }
+  </div>
+</fieldset>

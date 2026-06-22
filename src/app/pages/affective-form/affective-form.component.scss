@@ -1,0 +1,56 @@
+.Affective-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+
+  .example-card {
+    margin-bottom: 2em;
+
+    mat-card-header {
+      display: flex;
+      flex-direction: column;
+
+      mat-card-title {
+        font-size: 1.5em;
+        font-weight: 600;
+        text-align: center;
+      }
+    }
+
+    .step-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 24px;
+    }
+
+    mat-card-actions {
+      display: flex;
+      justify-content: center;
+      margin: 2em;
+    }
+  }
+}
+
+/* Defeitos - fica disponível em qualquer lugar */
+::ng-deep .defects-card.mat-mdc-card {
+  width: 60%;
+  height: 250px;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 2em auto;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: none; // remove sombra padrão
+  transition: box-shadow 0.3s ease;
+
+  &.elevated {
+    border: none;
+    box-shadow: 0 4px 12px rgba(17, 15, 15, .50);
+    background-color: #ffffff;
+  }
+
+
+}

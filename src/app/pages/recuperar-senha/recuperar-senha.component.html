@@ -1,0 +1,37 @@
+<app-container>
+  <section class="recuperar-senha">
+    <mat-card class="card-recuperar-senha" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title><strong>RECUPERAR SENHA</strong></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <ng-container *ngIf="!loadingService.loading(); else loading">
+          <img
+            class="recuperar-senha-logo"
+            mat-card-image
+            src="assets/logo-sensorial.png"
+            alt="Photo of a Shiba Inu"
+          />
+          <div class="form-container">
+            <form>
+              <mat-form-field appearance="outline">
+                <mat-label>E-mail</mat-label>
+                <input type="email" name="email" matInput placeholder="Escreva seu e-mail" [(ngModel)]="email"/>
+                <mat-icon matSuffix>mail</mat-icon>
+              </mat-form-field>
+              <mat-card-actions>
+                <button type="text" [disabled]="!email()"  mat-flat-button (click)="onSubmit()">Enviar e-mail de recuperação</button>
+                <button [routerLink]="['/login']" mat-flat-button>voltar</button>
+              </mat-card-actions>
+            </form>
+          </div>
+        </ng-container>
+        <ng-template #loading>
+          <div class="loading-wrapper">
+            <app-loading></app-loading>
+          </div>
+        </ng-template>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</app-container>

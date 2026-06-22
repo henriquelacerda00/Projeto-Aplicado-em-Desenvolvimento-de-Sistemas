@@ -1,0 +1,15 @@
+.menu-container {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 45%;
+    height: auto;
+    cursor: pointer;
+  }
+}
+
+.menu__icon {
+  width: 24px;
+  height: 24px;
+}

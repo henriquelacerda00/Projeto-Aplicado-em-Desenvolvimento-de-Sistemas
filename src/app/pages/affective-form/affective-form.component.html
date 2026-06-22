@@ -1,0 +1,197 @@
+<section class="Affective-form">
+  <app-container>
+
+    <mat-card class="example-card" appearance="outlined">
+
+      <!-- HEADER -->
+      <mat-card-header>
+        <mat-card-title>
+          {{ 'CARDS.AFFECTIVE_FORM' | translate }}
+        </mat-card-title>
+
+        <div #formheader></div>
+
+        <app-forms-header
+          [formGroup]="formHeader" [highlightTrigger]="animationTrigger">
+        </app-forms-header>
+      </mat-card-header>
+
+      <mat-card-content>
+
+        <!-- LEGEND -->
+        <app-legend-group-affective
+          [title]="'AFFECTIVE_FORM.LEGEND.TITLE' | translate"
+          [legendItems]="impressionOfQualityItems">
+        </app-legend-group-affective>
+
+        <!-- STEPPER -->
+        <mat-horizontal-stepper
+          [linear]="false"
+          #stepper
+          (selectionChange)="onStepChange($event)">
+
+          <!-- =================================================== -->
+          <!-- STEP 1 - FRAGRANCE -->
+          <!-- =================================================== -->
+          <mat-step [label]="'DESCRIPTIVE_FORM.FRAGRANCE' | translate">
+
+            <app-group-affective
+              [title]="'DESCRIPTIVE_FORM.FRAGRANCE' | translate"
+              [group]="fragranceForm"
+              [parent]="this">
+            </app-group-affective>
+
+            <mat-paginator
+              [length]="samples.length"
+              [pageSize]="1"
+              [pageIndex]="fragranceSampleIndex"
+              (page)="onFragrancePageChange($event)">
+            </mat-paginator>
+
+            <div class="step-actions">
+              <button
+                mat-flat-button
+                color="primary"
+                (click)="sendBulkData('Fragrance')"
+                [disabled]="!isLastSample" *ngIf="!loading.loading(); else loadingSpinner">
+                {{ 'SEND_DATA' | translate }}
+              </button>
+            </div>
+            <ng-template #loadingSpinner>
+              <div class="loading-container">
+                <mat-spinner></mat-spinner>
+              </div>
+            </ng-template>
+
+          </mat-step>
+
+          <!-- =================================================== -->
+          <!-- STEP 2 - AROMA -->
+          <!-- =================================================== -->
+          <mat-step [label]="'DESCRIPTIVE_FORM.AROMA' | translate">
+
+            <app-group-affective
+              [title]="'DESCRIPTIVE_FORM.AROMA' | translate"
+              [group]="aromaForm"
+              [parent]="this">
+            </app-group-affective>
+
+            <mat-paginator
+              [length]="samples.length"
+              [pageSize]="1"
+              [pageIndex]="aromaSampleIndex"
+              (page)="onAromaPageChange($event)">
+            </mat-paginator>
+
+            <div class="step-actions">
+              <button
+                mat-flat-button
+                color="primary"
+                (click)="sendBulkData('Aroma')"
+                [disabled]="!isLastSample"
+                *ngIf="!loading.loading(); else loadingSpinner">
+                {{ 'SEND_DATA' | translate }}
+              </button>
+            </div>
+
+            <ng-template #loadingSpinner>
+              <div class="loading-container">
+                <mat-spinner></mat-spinner>
+              </div>
+            </ng-template>
+
+
+          </mat-step>
+
+          <!-- =================================================== -->
+          <!-- STEP 3 - BEVERAGE -->
+          <!-- =================================================== -->
+          <mat-step [label]="'Beverage' | translate">
+
+            <!-- FLAVOR -->
+            <app-group-affective
+              [title]="'DESCRIPTIVE_FORM.FLAVOR' | translate"
+              [group]="flavorForm"
+              [otherGroups]="true">
+            </app-group-affective>
+
+            <!-- AFTERTASTE -->
+            <app-group-affective
+              [title]="'DESCRIPTIVE_FORM.AFTERTASTE' | translate"
+              [group]="aftertasteForm"
+              [otherGroups]="true">
+            </app-group-affective>
+
+            <!-- ACIDITY -->
+            <app-group-affective
+              [title]="'DESCRIPTIVE_FORM.ACIDITY' | translate"
+              [group]="acidityForm"
+              [otherGroups]="true">
+            </app-group-affective>
+
+            <!-- SWEETNESS -->
+            <app-group-affective
+              [title]="'DESCRIPTIVE_FORM.SWEETNESS' | translate"
+              [group]="sweetnessForm"
+              [otherGroups]="true">
+            </app-group-affective>
+
+            <!-- MOUTHFEEL -->
+            <app-group-affective
+              [title]="'DESCRIPTIVE_FORM.MOUTHFEEL' | translate"
+              [group]="mouthfeelForm"
+              [otherGroups]="true">
+            </app-group-affective>
+
+            <!-- OVERALL -->
+            <app-group-affective
+              [title]="'DESCRIPTIVE_FORM.OVERALL' | translate"
+              [group]="overallForm"
+              [otherGroups]="true">
+            </app-group-affective>
+
+            <!-- DEFECTS -->
+            <mat-card class="mat-mdc-card defects-card elevated">
+              <mat-card-content>
+                <app-defects-affective
+                  [group]="defectsForm">
+                </app-defects-affective>
+              </mat-card-content>
+            </mat-card>
+
+            <!-- PAGINATOR -->
+            <mat-paginator
+              [length]="samples.length"
+              [pageSize]="1"
+              [pageIndex]="beverageSampleIndex"
+              (page)="onBeveragePageChange($event)">
+            </mat-paginator>
+
+            <!-- BOTÃO FINAL -->
+            <div class="step-actions">
+              <button
+                mat-flat-button
+                color="primary"
+                (click)="sendBulkData('Beverage')"
+                [disabled]="!isLastSample"
+                *ngIf="!loading.loading(); else loadingSpinner">
+                {{ 'SEND_DATA' | translate }}
+              </button>
+            </div>
+
+            <ng-template #loadingSpinner>
+              <div class="loading-container">
+                <mat-spinner></mat-spinner>
+              </div>
+            </ng-template>
+
+          </mat-step>
+
+        </mat-horizontal-stepper>
+
+      </mat-card-content>
+
+    </mat-card>
+
+  </app-container>
+</section>

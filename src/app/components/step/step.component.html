@@ -1,0 +1,143 @@
+<mat-stepper #stepper linear>
+
+  <!-- STEP 1 -->
+  <mat-step [stepControl]="primeiroFormGroup">
+    <form [formGroup]="primeiroFormGroup">
+      <ng-template matStepLabel>Nome da sessão</ng-template>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Nome da sessão</mat-label>
+        <input matInput formControlName="sessionName" />
+      </mat-form-field>
+
+      <button mat-button matStepperNext>Next</button>
+    </form>
+  </mat-step>
+
+  <!-- STEP 2 -->
+  <mat-step [stepControl]="segundoFormGroup" label="Cadastrar Q-Graders">
+    <form [formGroup]="segundoFormGroup">
+      <div class="field-container">
+        <mat-form-field appearance="outline">
+          <mat-label>E-mail</mat-label>
+          <input matInput formControlName="email" />
+        </mat-form-field>
+
+        <button mat-fab color="primary" type="button" (click)="addQGrader()">
+          <mat-icon>add</mat-icon>
+        </button>
+        <p>Adicionar Q-grader</p>
+      </div>
+
+      <div class="table-container">
+        <table mat-table [dataSource]="dataSource" class="table">
+
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef>E-mail</th>
+            <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Ações</th>
+            <td mat-cell *matCellDef="let element; let i = index">
+              <button mat-icon-button (click)="editQGrader(i)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="removeQGrader(i)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
+
+      <mat-paginator #qGraderPaginator [pageSize]="3" [pageSizeOptions]="[3,5,10]">
+      </mat-paginator>
+
+      <div class="bt-container">
+        <button mat-button matStepperPrevious>
+          Back
+        </button>
+        <button mat-button matStepperNext [disabled]="dataSource.data.length === 0">
+          Next
+        </button>
+      </div>
+    </form>
+  </mat-step>
+
+  <!-- STEP 3 -->
+  <mat-step [stepControl]="terceiroFormGroup" label="Cadastrar Amostras">
+    <form [formGroup]="terceiroFormGroup">
+
+      <div class="field-container">
+        <mat-form-field appearance="outline">
+          <mat-label>Número da amostra</mat-label>
+          <input matInput formControlName="sampleInput" />
+        </mat-form-field>
+
+        <button mat-fab color="primary" type="button" (click)="addSample()">
+          <mat-icon>add</mat-icon>
+        </button>
+        <p>Adicionar amostra</p>
+      </div>
+
+      <div class="table-container">
+        <table mat-table [dataSource]="sampleDataSource" class="table">
+
+          <ng-container matColumnDef="sampleNumber">
+            <th mat-header-cell *matHeaderCellDef>Amostra</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.sampleNumber }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Ações</th>
+            <td mat-cell *matCellDef="let element; let i = index">
+              <button mat-icon-button (click)="editSample(i)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="removeSample(i)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedSampleColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedSampleColumns"></tr>
+        </table>
+      </div>
+
+      <mat-paginator #samplePaginator [pageSize]="3" [pageSizeOptions]="[3,5,10]">
+      </mat-paginator>
+      <div>
+        <button mat-button matStepperPrevious>
+          Back
+        </button>
+        <button mat-button matStepperNext [disabled]="sampleDataSource.data.length === 0">
+          Next
+        </button>
+      </div>
+    </form>
+  </mat-step>
+
+  <!-- FINAL -->
+  <mat-step>
+    <ng-template matStepLabel>Finalizar</ng-template>
+    <form>
+      <app-extrisinc-form *ngIf="currentSampleNumber" [cadastrarAnalise]="true" [sampleNumber]="currentSampleNumber"
+        [initialData]="currentExtrisincData" (formChange)="onExtrisincChange($event)">
+      </app-extrisinc-form>
+      <mat-paginator [length]="samples.length" [pageSize]="1" [pageSizeOptions]="[1]"
+        (page)="onSamplePageChange($event)">
+      </mat-paginator>
+      <div class="bt-container">
+        <button mat-button matStepperPrevious>Back</button>
+      </div>
+    </form>
+  </mat-step>
+
+</mat-stepper>

@@ -1,0 +1,29 @@
+.physical-assessments{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  justify-content: center;
+  margin-top: 2em;
+  overflow-y: hidden ;
+  .example-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3em;
+    mat-card-header{
+      display: flex;
+      flex-direction: column;
+      mat-card-title{
+        font-size: 1.5em;
+        font-weight: 600;
+        text-align: center;
+      }
+
+    }
+    mat-card-actions{
+      margin: 2em;
+      justify-content: center;
+    }
+  }
+}

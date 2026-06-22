@@ -1,0 +1,109 @@
+<mat-card class="card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title><strong>Gerenciar Sessões</strong></mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div *ngIf="!loading.isLoading(); else loadingSpinner" class="content-container">
+      <mat-tab-group
+        [selectedIndex]="selectedTab === 'active' ? 0 : 1"
+        (selectedIndexChange)="selectedTab = $event === 0 ? 'active' : 'inactive'"
+      >
+        <mat-tab label="Ativas"></mat-tab>
+        <mat-tab label="Inativas"></mat-tab>
+      </mat-tab-group>
+
+      <div class="table-container" *ngIf="filteredSessions.length > 0; else emptyState">
+        <table mat-table [dataSource]="filteredSessions" class="mat-elevation-z2">
+
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Sessão</th>
+            <td mat-cell *matCellDef="let session">{{ session.name }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="samplesCount">
+            <th mat-header-cell *matHeaderCellDef>Amostras</th>
+            <td mat-cell *matCellDef="let session">
+              {{ session.session_samples?.length || 0 }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <td mat-cell *matCellDef="let session">
+              <span
+                class="status-badge"
+                [ngClass]="{
+                  'active': !session.status || session.status === 'active',
+                  'inactive': session.status === 'inactive'
+                }"
+              >
+                {{ !session.status || session.status === 'active' ? 'Ativa' : 'Inativa' }}
+              </span>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="createdAt">
+            <th mat-header-cell *matHeaderCellDef>Criada em</th>
+            <td mat-cell *matCellDef="let session">
+              {{ session.created_at | date:'dd/MM/yyyy HH:mm' }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Ações</th>
+            <td mat-cell *matCellDef="let session">
+              <button
+                mat-icon-button
+                color="primary"
+                matTooltip="Editar sessão"
+                (click)="editSession(session)"
+              >
+                <mat-icon>edit</mat-icon>
+              </button>
+
+              <button
+                *ngIf="!session.status || session.status === 'active'"
+                mat-icon-button
+                color="warn"
+                matTooltip="Inativar sessão"
+                (click)="inactivate(session)"
+              >
+                <mat-icon>toggle_off</mat-icon>
+              </button>
+
+              <button
+                *ngIf="session.status === 'inactive'"
+                mat-icon-button
+                color="accent"
+                matTooltip="Reativar sessão"
+                (click)="reactivate(session)"
+              >
+                <mat-icon>toggle_on</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+
+      <ng-template #emptyState>
+        <p>
+          {{
+            selectedTab === 'active'
+              ? 'Nenhuma sessão ativa encontrada.'
+              : 'Nenhuma sessão inativa encontrada.'
+          }}
+        </p>
+      </ng-template>
+    </div>
+
+    <ng-template #loadingSpinner>
+      <div class="loading-container">
+        <mat-spinner></mat-spinner>
+      </div>
+    </ng-template>
+  </mat-card-content>
+</mat-card>

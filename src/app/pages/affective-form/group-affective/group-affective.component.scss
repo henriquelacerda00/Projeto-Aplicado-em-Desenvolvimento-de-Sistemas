@@ -1,0 +1,114 @@
+@use "@angular/material" as mat;
+
+:host {
+  /* Estilização para o layout geral */
+  .group-affective {
+    display: flex; /* Mantém o flexbox para o layout vertical */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4em;
+
+    .submit-button{
+      display: flex;
+      flex-wrap: wrap;
+      width: 150px;
+    }
+  }
+  .custom-group-affective {
+    display: grid; /* Alterado para grid */
+    grid-template-columns: 1fr 1fr; /* Duas colunas com larguras iguais */
+    gap: 3em; /* Espaçamento entre as colunas */
+    align-items: center;
+    justify-content: center;
+
+    .custom-container-data {
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+
+      .custom {
+        display: grid; /* Alterado para grid */
+        grid-template-columns: auto 1fr; /* Título com largura automática e botões preenchendo o espaço */
+        gap: 3em;
+        align-items: center;
+      }
+    }
+
+    mat-form-field {
+      width: 100%;
+
+      ::ng-deep .mat-mdc-form-field-subscript-wrapper {
+        display: none !important;
+        line-height: 0 !important;
+      }
+
+      textarea {
+        resize: none;
+        height: 100px;
+      }
+    }
+  }
+  .container-data {
+    display: grid; /* Alterado para grid */
+    grid-template-columns: auto 1fr auto; /* Título e campo de notas com largura automática, botões preenchendo */
+    align-items: center;
+    justify-items: center; /* Centraliza os itens horizontalmente dentro de suas células */
+    gap: 3em;
+    margin-bottom: 2em;
+  }
+
+  /* Estilização para os botões de rádio personalizados */
+  .custom-radio-group {
+    display: flex;
+    gap: 0.5em;
+    label {
+      cursor: pointer;
+      display: flex;
+    }
+    input[type="radio"] {
+      display: none;
+    }
+    .custom-radio-button {
+      height: 40px;
+      width: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #e2e2e2;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background-color 0.2s, color 0.2s;
+    }
+    label:hover .custom-radio-button {
+      background-color: #979797;
+    }
+    input[type="radio"]:checked + .custom-radio-button {
+      background-color: #1832c5;
+      color: white;
+      border-color: #1832c5;
+    }
+  }
+
+  /* Estilização para o textarea (permanece a mesma) */
+  .notes-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  mat-form-field {
+    width: 100%;
+
+    ::ng-deep .mat-mdc-form-field-subscript-wrapper {
+      display: none !important;
+      line-height: 0 !important;
+    }
+
+    textarea {
+      resize: none;
+    }
+  }
+}

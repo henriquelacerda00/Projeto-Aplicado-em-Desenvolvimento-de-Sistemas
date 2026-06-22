@@ -1,0 +1,13 @@
+<div class="checkboxes-group" [formGroup]="parentFormGroup">
+  <div *ngFor="let column of checkboxColumns" class="checkboxes-colum">
+    <div *ngFor="let row of column.rows" class="checkboxes-row">
+      <mat-checkbox
+        *ngFor="let checkbox of row"
+        color="primary"
+        [formControlName]="normalizeCheckboxName(checkbox)"
+      >
+        {{'DESCRIPTIVE_FORM.' + getTranslationKey(checkbox) | translate }}
+      </mat-checkbox>
+    </div>
+  </div>
+</div>

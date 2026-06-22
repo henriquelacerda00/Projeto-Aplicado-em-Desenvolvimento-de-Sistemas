@@ -1,0 +1,33 @@
+<mat-tree class="tree" [dataSource]="dataSource" [treeControl]="treeControl">
+
+  <!-- Nó folha (sem filhos) -->
+  <mat-nested-tree-node *matTreeNodeDef="let node; when: !hasChild" matTreeNodePadding>
+    <mat-checkbox
+      [checked]="node.checked"
+      (change)="onCheckboxChange(node, $event)"
+    >
+      {{ node.name | translate}}
+    </mat-checkbox>
+
+    <mat-form-field *ngIf="node.allowNotes && node.checked" class="notes-field" appearance="outline">
+      <mat-label>Notas</mat-label>
+      <input matInput [(ngModel)]="node.notes" (ngModelChange)="treeUpdate.emit(dataSource.data)">
+    </mat-form-field>
+  </mat-nested-tree-node>
+
+  <!-- Nó pai (com filhos) -->
+  <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
+    <div class="mat-tree-node">
+      <button mat-icon-button matTreeNodeToggle>
+        <mat-icon class="mat-icon-rtl-mirror">
+          {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}
+        </mat-icon>
+      </button>
+      <span>{{ node.name | translate }}</span>
+    </div>
+    <div [class.tree-invisible]="!treeControl.isExpanded(node)">
+      <ng-container matTreeNodeOutlet></ng-container>
+    </div>
+  </mat-nested-tree-node>
+
+</mat-tree>

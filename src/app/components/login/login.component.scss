@@ -1,0 +1,243 @@
+@use "@angular/material" as mat;
+
+// Customize the entire app. Change :root to your selector if you want to scope the styles.
+:host {
+  @include mat.button-overrides((filled-container-color: green,
+      filled-label-text-color: white,
+    ));
+}
+
+
+:host ::ng-deep .mat-mdc-text-field-wrapper {
+  border-radius: 6px;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  /* altura total da tela */
+  align-items: stretch;
+
+  /* faz os filhos ocuparem toda a altura */
+  h1 {
+    text-align: center;
+    color: white;
+  }
+
+  .form-container {
+    position: relative;
+    width: 30%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#3b6441),
+      /* gradiente por cima */
+      url("/assets/image4.png");
+    /* imagem de fundo */
+
+    background-size: cover;
+    /* faz a imagem preencher */
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 10px;
+    background-blend-mode: multiply;
+    /* ou overlay, darken, lighten */
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    >* {
+      position: relative;
+      z-index: 2;
+      /* mantém o conteúdo acima do overlay */
+    }
+  }
+
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* centraliza verticalmente */
+    width: 140px;
+    height: 140px;
+    background-color: white;
+    border-radius: 50%;
+    margin-bottom: 1em;
+
+    .logo-lab {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 130px;
+      height: 130px;
+      /* círculo perfeito */
+
+      overflow: hidden;
+      /* garante que nada vaze */
+
+      padding: 0;
+      /* remove padding para a imagem não ser cortada */
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        /* mantém proporção da imagem */
+      }
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    // min-height: 100vh;
+    // height: auto;
+    gap: 0.3em; 
+
+    ::ng-deep .mat-mdc-select-value-text {
+      font-size: 14px;
+    }
+
+    ::ng-deep .mat-mdc-text-field-wrapper{
+      text-align: center;
+    }
+
+    .small-select-panel .mat-option .mat-option-text {
+      font-size: 12px !important;
+      /* ajuste pro que quiser */
+      height: 32px !important;
+      line-height: 32px !important;
+      padding-top: 0.2rem !important;
+      /* opcional: compactar paddings */
+      padding-bottom: 0.2rem !important;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      // width: 40%;
+      gap: 1em;
+      max-width: 180px;
+      margin-top: 0.5em;
+
+      /* Botão login/cadastro Angular Material 15+ */
+      .login-button {
+        background-color: #2e7d32 !important;
+        /* verde ativo */
+        color: white !important;
+        width: 100%;
+      }
+
+      ::ng-deep .disabled-button {
+        background-color: #9c9a9a !important;
+        /* cinza */
+        color: #3d3c3c !important;
+        /* texto escuro */
+        pointer-events: none;
+        /* evita clique */
+        width: 100%;
+      }
+    }
+  }
+
+  p {
+    color: white;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+.image-container {
+  width: 100vw;
+  min-height: 100vh;
+  position: absolute;
+  height: auto;
+  /* mesmo que o formulário */
+  background: url("/assets/image 3.png");
+  background-position-x: 100%;
+  background-size: auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .login {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // width: 100vw;
+    min-height: 100vh;
+
+    .form-container {
+      width: 90%;
+      max-width: 500px;
+      height: auto;
+      min-height: auto;
+      // max-height: 90%;
+      // max-height: 700px;
+      // position: relative;
+      z-index: 9;
+      border-radius: 20px;
+      box-sizing: border-box;
+      padding: 20px;
+
+      /* metade da tela */
+    }
+  }
+
+  .image-container {
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    filter: brightness(0.9);
+    width: 100vw;
+    min-height: 100vh;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    /* metade da tela */
+  }
+}
+
+@media screen and (max-width: 340px) {
+  :host ::ng-deep mat-form-field {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1921px) {
+  .login {
+    background: linear-gradient(rgb(7, 62, 21));
+    display: flex;
+    justify-content: center;
+  }
+
+  .image-container {
+    max-width: 1920px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}

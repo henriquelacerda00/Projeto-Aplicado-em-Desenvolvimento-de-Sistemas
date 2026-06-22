@@ -1,0 +1,58 @@
+.affective-form{
+  display: flex;
+  justify-content: space-between;
+  .checkboxes-container_any {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      padding: 0 0.1em;
+    }
+  .container-data {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-start;
+
+    .container-title {
+      min-width: 140px;
+      p{
+        font-size: 14px;
+        
+      }
+    }
+    .checkboxes-container {
+      display: flex;
+      align-items: start;
+      padding: 0 0.1em;
+    }
+    .checkboxes-row {
+      display: flex;
+      align-items: center;
+      margin-right: 50px;
+    }
+  }
+}
+
+.defects-any{
+  display: flex;
+  flex-direction: column;
+  align-items: start; 
+
+  .container-defects-any{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+// 👇 Estilos manuais para reduzir ainda mais o tamanho
+:host ::ng-deep .mat-mdc-checkbox .mdc-checkbox {
+  transform: scale(0.8); // metade do tamanho
+}
+
+:host ::ng-deep .mat-mdc-checkbox .mdc-checkbox__background {
+  width: 16px;
+  height: 16px;
+}
+
+

@@ -1,0 +1,95 @@
+<app-container>
+  <div class="accordion-container">
+    <h2>Minhas Análises</h2>
+
+    <!-- filtro -->
+    <app-filter (statusChange)="filtrarAnalises($event)" [analises]="dataSource"></app-filter>
+
+    <div class="export-buttons">
+      <button mat-raised-button color="warn" class="excel" (click)="exportarExcel()">
+        <mat-icon>table_view</mat-icon> Exportar Excel
+      </button>
+      <button mat-raised-button color="accent" class="pdf" (click)="exportarPDF()">
+        <mat-icon>picture_as_pdf</mat-icon> Exportar PDF
+      </button>
+    </div>
+
+    <!-- accordion -->
+    <mat-accordion multi *ngIf="!loading.loading(); else loadingSpinner">
+      <mat-expansion-panel *ngFor="let table of filteredDataSource">
+        <mat-expansion-panel-header>
+          <mat-panel-title> {{ table.tableType }}</mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <!-- DADOS FORMATADOS -->
+        <!-- <div *ngIf="table.data.length; else noFormattedData">
+          <h4>Dados Preenchidos</h4>
+          <table class="mat-elevation-z2">
+            <ng-container *ngFor="let d of table.data">
+              <th>{{ d.key.replaceAll("_", " ") | titlecase }}</th>
+              <td>{{ d.value }}</td>
+            </ng-container> -->
+        <!-- <thead>
+              <tr>
+                <th>Campo</th>
+                <th>Valor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let d of a.formattedData">
+                <td>{{ d.key.replaceAll("_", " ") | titlecase }}</td>
+                <td>{{ d.value }}</td>
+              </tr>
+            </tbody> -->
+        <!-- </table>
+        </div> -->
+
+        <!-- <ng-template #noFormattedData>
+          <p class="empty">Nenhum dado preenchido.</p>
+        </ng-template> -->
+
+        <!-- DADOS CRUS -->
+
+        <!-- <table mat-table [dataSource]="table.data">
+          @for (data of table.data; track $index) { @for(key of objectKeys(data); track $index) {
+          <ng-container matColumnDef="{{ data }}">
+            <th mat-header-cell *matHeaderCellDef>{{ key.replaceAll("_", " ") | titlecase }}</th>
+            <td mat-cell *matCellDef="data">{{ data[$index][key] }}</td>
+          </ng-container>
+          } }
+        </table> -->
+        <div *ngIf="table.data.length; else noRawData">
+          <h4>Dados Brutos</h4>
+
+          <!-- Container com scroll horizontal para tabelas grandes -->
+          <div class="table-container">
+            <table mat-table [dataSource]="table.data" class="mat-elevation-z2">
+              <!-- Colunas dinâmicas geradas a partir das chaves dos objetos -->
+              <ng-container *ngFor="let column of getColumns(table.data)" [matColumnDef]="column">
+                <th mat-header-cell *matHeaderCellDef>
+                  {{ formatColumn(table.tableType, column) }}
+                </th>
+                <td mat-cell *matCellDef="let element">
+                  {{ column === "date" ? (element[column] | date : "dd/MM/yyyy") : element[column] }}
+                </td>
+              </ng-container>
+
+              <!-- Definição das linhas -->
+              <tr mat-header-row *matHeaderRowDef="getColumns(table.data); sticky: true"></tr>
+              <tr mat-row *matRowDef="let row; columns: getColumns(table.data)"></tr>
+            </table>
+          </div>
+        </div>
+
+        <ng-template #noRawData>
+          <p class="empty">Nenhum análise encontrada.</p>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <ng-template #loadingSpinner>
+      <div class="loading-container">
+        <mat-spinner></mat-spinner>
+      </div>
+    </ng-template>
+  </div>
+</app-container>

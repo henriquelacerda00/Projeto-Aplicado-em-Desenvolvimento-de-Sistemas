@@ -1,0 +1,8 @@
+<section class="checkboxes" [formGroup]="parentFormGroup">
+  <mat-checkbox
+    *ngFor="let checkbox of checkboxes"
+    color="primary"
+    [formControlName]="checkbox.formControlName">
+    {{('DESCRIPTIVE_FORM.MF_CHECK_BOXES.' + getTranslationKey(checkbox.formControlName)) | translate}}
+  </mat-checkbox>
+</section>

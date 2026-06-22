@@ -1,0 +1,11 @@
+<mat-drawer-container class="example-container" autosize>
+  
+  <mat-drawer class="drawer" mode="side" [opened]="drawerOpened">
+    <app-sidebar></app-sidebar>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+
+</mat-drawer-container>

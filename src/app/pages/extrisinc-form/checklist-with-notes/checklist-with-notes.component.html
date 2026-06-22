@@ -1,0 +1,33 @@
+<div class="checklist-container">
+  <h3>{{ title }}</h3>
+  <form [formGroup]="formGroup">
+    <div formArrayName="itemsArray" class="checklist-grid-container">
+      <div *ngFor="let item of itemsArray.controls; let i = index" [formGroupName]="i" class="grid-item">
+
+        <!-- Checkbox -->
+        <mat-checkbox *ngIf="!itemsArray.at(i).get('hasTree')?.value" formControlName="checked" color="primary"
+          (change)="onCheckboxChange(i)">
+          {{
+          getTranslationKey(group, itemsArray.at(i).get('label')?.value)
+          | translate
+          }}
+        </mat-checkbox>
+
+        <mat-form-field *ngIf="isNotesVisible(i) && !itemsArray.at(i).get('hasTree')?.value" appearance="outline"
+          class="notes-field">
+          <mat-label>{{'DESCRIPTIVE_FORM.NOTES' | translate }}</mat-label>
+          <input matInput formControlName="notes" (input)="onNotesChange(i)" />
+        </mat-form-field>
+
+        <!-- Se tiver árvore, ela entra abaixo -->
+        <ng-container *ngIf="items[i].hasTree">
+          <div class="tree-selection-container">
+            <app-tree-options [treeData]="itemsArray.at(i).get('subItems')?.value || []"
+              (treeUpdate)="onTreeUpdate(i, $event)"></app-tree-options>
+          </div>
+        </ng-container>
+        
+      </div>
+    </div>
+  </form>
+</div>

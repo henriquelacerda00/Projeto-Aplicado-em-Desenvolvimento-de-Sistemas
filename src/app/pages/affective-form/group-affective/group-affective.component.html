@@ -1,0 +1,26 @@
+<section class="group-affective" [formGroup]="group">
+
+  <h2>{{ title }}</h2>
+
+  <div class="container-data">
+
+    <div class="custom-radio-group">
+      <label *ngFor="let button of buttons">
+        <input type="radio" [value]="button" formControlName="value" />
+        <span class="custom-radio-button">
+          {{ button }}
+        </span>
+      </label>
+    </div>
+
+    <div class="notes-container">
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'DESCRIPTIVE_FORM.NOTES' | translate }}</mat-label>
+        <textarea matInput formControlName="notes">
+        </textarea>
+      </mat-form-field>
+    </div>
+
+  </div>
+
+</section>

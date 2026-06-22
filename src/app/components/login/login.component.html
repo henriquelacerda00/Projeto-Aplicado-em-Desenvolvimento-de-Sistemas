@@ -1,0 +1,112 @@
+<section class="login">
+  <div class="image-container">
+    <div class="form-container">
+      <h1>
+        <strong>{{ TypePage ? "CADASTRO" : "LOGIN" }}</strong>
+      </h1>
+
+      <div class="logo-container">
+        <img src="assets/logo-sensorial.png" alt="logo" class="logo-lab" />
+      </div>
+
+      <form [formGroup]="TypePage ? cadastroForm : loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field *ngIf="TypePage" class="sidebar-form-field" >
+          <mat-label>Tipo de usuario</mat-label>
+          <mat-select panelClass="small-select-panel" formControlName="tipoUsuario">
+            <mat-option value="P">Pesquisador</mat-option>
+            <mat-option value="Q">Q-grader</mat-option>
+          </mat-select>
+          <mat-error *ngIf="cadastroForm.get('tipoUsuario')?.hasError('required')">Campo obrigatório*</mat-error>
+        </mat-form-field>
+        
+        <mat-form-field *ngIf="TypePage" appearance="fill" class="sidebar-form-field">
+          <mat-label>Nome</mat-label>
+          <input type="text" matInput placeholder="Escreva seu Nome" formControlName="nome" />
+          <mat-icon matSuffix>person</mat-icon>
+          <mat-error *ngIf="cadastroForm.get('nome')?.hasError('required')">Campo obrigatório*</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="sidebar-form-field">
+          <mat-label>E-mail</mat-label>
+          <input type="email" matInput placeholder="Escreva seu e-mail" formControlName="email" />
+          <mat-icon matSuffix>mail</mat-icon>
+    
+          <mat-error *ngIf="(TypePage ? cadastroForm : loginForm).get('email')?.hasError('required')">
+            Campo obrigatório*
+          </mat-error>
+
+          <mat-error *ngIf="(TypePage ? cadastroForm : loginForm).get('email')?.hasError('email')">
+            Email inválido*
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="sidebar-form-field">
+          <mat-label>Senha</mat-label>
+
+          <input type="password" matInput placeholder="Escreva sua senha" formControlName="senha" />
+          <mat-icon matSuffix>lock</mat-icon>
+
+          <mat-error *ngIf="(TypePage ? cadastroForm : loginForm).get('senha')?.hasError('required')">
+            Campo obrigatório*
+          </mat-error>
+
+          <mat-error *ngIf="(TypePage ? cadastroForm : loginForm).get('senha')?.hasError('minlength')">
+            Mínimo de 6 caracteres*
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field *ngIf="TypePage" appearance="fill" class="sidebar-form-field">
+          <mat-label>Confirmar Senha</mat-label>
+
+          <input type="password" matInput placeholder="Confirme sua senha" formControlName="confirmarSenha"
+            [errorStateMatcher]="confirmMatcher" />
+          <mat-icon matSuffix>lock</mat-icon>
+
+          <mat-error *ngIf="cadastroForm.get('confirmarSenha')?.hasError('required')">
+            Campo obrigatório*
+          </mat-error>
+          
+          <mat-error *ngIf="
+            !cadastroForm.get('confirmarSenha')?.hasError('required')
+            && cadastroForm.get('confirmarSenha')?.hasError('minlength')">
+            Mínimo de 6 caracteres*
+          </mat-error>
+          
+          <mat-error *ngIf="
+            !cadastroForm.get('confirmarSenha')?.hasError('required')
+            && !cadastroForm.get('confirmarSenha')?.hasError('minlength')
+            && cadastroForm.hasError('senhasDiferentes')
+            && cadastroForm.get('confirmarSenha')?.touched">
+            As senhas não conferem*
+          </mat-error>
+        </mat-form-field>
+
+        <div class="button-container" *ngIf="!loadingService.loading(); else loadingSpinner">
+          <!-- <app-login-google [label]="TypePage ? 'Sign Up' : 'Sign In'" (click)="loginGoogle()"></app-login-google> -->
+
+          <button type="submit" mat-flat-button
+            [ngClass]="(TypePage ? cadastroForm.invalid : loginForm.invalid) ? 'disabled-button' : 'login-button'">
+            {{ TypePage ? "CADASTRAR" : "LOGIN" }}
+          </button>
+        </div>
+        <ng-template #loadingSpinner>
+          <div class="loading-container">
+            <mat-spinner></mat-spinner>
+          </div>
+        </ng-template>
+
+        <p *ngIf="!TypePage">
+          Ainda não possui conta?
+          <a (click)="toggleForm()"><u>Cadastre-se</u></a>
+        </p>
+
+        <p *ngIf="TypePage">
+          Já possui conta?
+          <a (click)="toggleForm()"><u>Faça login</u></a>
+        </p>
+
+        <a *ngIf="!TypePage" [routerLink]="['/recuperar-senha']">Esqueceu sua senha?</a>
+      </form>
+    </div>
+  </div>
+</section>

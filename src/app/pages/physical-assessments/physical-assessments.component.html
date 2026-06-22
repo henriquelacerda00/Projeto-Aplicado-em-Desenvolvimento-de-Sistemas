@@ -1,0 +1,46 @@
+<section class="physical-assessments">
+  <app-container>
+    <mat-card class="example-card" appearance="outlined">
+      <form [formGroup]="physicalForm" (ngSubmit)="onSubmit()">
+
+        <mat-card-header>
+          <mat-card-title>
+            {{ 'CARDS.PHYSICAL_ASSESSMENT' | translate}}
+          </mat-card-title>
+          <div #formheader></div>
+          <app-forms-header [formGroup]="formHeader" [highlightTrigger]="animationTrigger"></app-forms-header>
+        </mat-card-header>
+
+        <mat-card-content>
+
+          <app-colors-physical [formGroup]="formColors">
+          </app-colors-physical>
+
+          <app-table-physical [formGroup]="physicalForm" [formArray]="formTable"
+            (cobtypeChange)="onCobtypeChange($event)" (totalGreenDefectsChange)="onTotalGreenDefectsChange($event)"
+            (tdg300Change)="onTdg300Change($event)">
+          </app-table-physical>
+
+        </mat-card-content>
+
+        <!-- 🔥 PAGINATOR CONTROLANDO AS SAMPLES -->
+        <mat-paginator *ngIf="samples && samples.length > 0" [length]="samples.length" [pageSize]="1"
+          [pageSizeOptions]="[1]" showFirstLastButtons (page)="onPageChange($event)">
+        </mat-paginator>
+
+        <mat-card-actions>
+          <button mat-flat-button color="primary" type="submit" [disabled]="!isLastSample" *ngIf="!loading.loading(); else loadingSpinner">
+            {{'SEND_DATA' | translate}}
+          </button>
+        </mat-card-actions>
+
+        <ng-template #loadingSpinner>
+          <div class="loading-container">
+            <mat-spinner></mat-spinner>
+          </div>
+        </ng-template>
+
+      </form>
+    </mat-card>
+  </app-container>
+</section>

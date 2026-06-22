@@ -1,0 +1,32 @@
+<section class="header" *ngIf="showHeader">
+  <mat-toolbar>
+    <div class="menu">
+      <button mat-mini-fab aria-label="Example icon button with a menu icon" (click)="onMenuClick()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <h1 [routerLink]="['/']">CVA DATA</h1>
+    </div>
+    <!-- <app-menu></app-menu> -->
+    <div class="links-container">
+      <div class="language-switch">
+        <img src="assets/br.png" alt="Português" class="flag" [class.active]="!isEnglish" />
+
+        <mat-slide-toggle [checked]="isEnglish" (change)="toggleLanguage($event.checked)" color="primary">
+        </mat-slide-toggle>
+
+        <img src="assets/us.png" alt="English" class="flag" [class.active]="isEnglish" />
+      </div>
+
+      <button class="my-analyses" mat-flat-button color="primary" [routerLink]="['/minhas-analises']">
+        {{ "TOOL_BAR.MY_ANALYSES" | translate }}
+      </button>
+      <!-- <button mat-stroked-button color="primary">{{ "TOOL_BAR.ABOULT" | translate }}</button> -->
+      <button [routerLink]="['/profile']" mat-stroked-button color="primary" class="profile">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <button mat-stroked-button color="primary" class="logout" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+</section>

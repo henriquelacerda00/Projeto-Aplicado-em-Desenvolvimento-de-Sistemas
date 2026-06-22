@@ -1,0 +1,34 @@
+<section class="extrisinc" #formTop>
+  <app-container>
+    <mat-card class="example-card" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>{{'CARDS.EXTRISINC_FORM' | translate }}</mat-card-title>
+        <app-forms-header [formGroup]="formHeader" [highlightTrigger]="animationTrigger">
+          ></app-forms-header>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="readonly-block" [class.readonly]="!cadastrarAnalise">
+          <app-group-extrisinc [farmingItems]="farmingItems" [processingItems]="processingItems"
+            [tradingItems]="tradingItems" [certificationsItems]="certificationsItems"
+            (farmingChanged)="onFarmingUpdate($event)" (processingChanged)="onProcessingUpdate($event)"
+            (tradingChanged)="onTradingUpdate($event)" (certificationsChanged)="onCertificationsUpdate($event)">
+          </app-group-extrisinc>
+        </div>
+
+        <app-legend-group-affective *ngIf="!cadastrarAnalise" class="legenda"
+          [title]="'AFFECTIVE_FORM.LEGEND.TITLE2' | translate" [legendItems]="impressionOfQualityItems">
+        </app-legend-group-affective>
+
+        <app-impression-value-extrisinc *ngIf="!cadastrarAnalise" [value]="impressionOfValueControl?.value"
+          (valueChange)="onImpressionValueUpdate($event)">
+        </app-impression-value-extrisinc>
+      </mat-card-content>
+      <mat-card-actions *ngIf="!cadastrarAnalise">
+        <button mat-flat-button color="primary" (click)="onSubmit()"
+          [disabled]="!isLastSample || impressionOfValueControl?.value == null">
+          {{'SEND_DATA' | translate }}
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </app-container>
+</section>

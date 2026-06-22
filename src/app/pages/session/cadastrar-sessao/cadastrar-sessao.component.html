@@ -1,0 +1,19 @@
+<app-container>
+    <mat-card class="card" appearance="outlined">
+        <mat-card-header>
+            <mat-card-title>Cadastrar Sessão</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <app-step (submitSession)="onCreateSession($event)"></app-step>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-flat-button (click)="submit()" [disabled]="!canSubmit"
+                *ngIf="!loading.loading(); else loadingSpinner">Cadastrar Sessão</button>
+            <ng-template #loadingSpinner>
+                <div class="loading-container">
+                    <mat-spinner></mat-spinner>
+                </div>
+            </ng-template>
+        </mat-card-actions>
+    </mat-card>
+</app-container>
